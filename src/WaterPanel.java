@@ -1,2 +1,4 @@
-public class WaterPanel {
+import javax.swing.*;
+
+public class WaterPanel extends JPanel {
 }

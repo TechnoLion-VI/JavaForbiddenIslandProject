@@ -1,2 +1,4 @@
-public class PlayerPanel {
+import javax.swing.*;
+
+public class PlayerPanel extends JPanel {
 }

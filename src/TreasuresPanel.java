@@ -1,2 +1,4 @@
-public class TreasuresPanel {
+import javax.swing.*;
+
+public class TreasuresPanel extends JPanel {
 }

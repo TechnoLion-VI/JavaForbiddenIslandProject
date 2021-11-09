@@ -1,2 +1,4 @@
-public class FirstInputPanel {
+import javax.swing.*;
+
+public class FirstInputPanel extends JPanel {
 }
