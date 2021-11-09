@@ -12,4 +12,10 @@ public class TreasureDeck {
         deck = discard;
         discard.clear();
     }
+    public TreasureCard draw() {
+        if(deck.size()>0) {
+            return deck.remove(0);
+        }
+        return null;
+    }
 }
