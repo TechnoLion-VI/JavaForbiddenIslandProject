@@ -5,7 +5,7 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.io.*;
 
-public class FirstInputPanel extends JPanel {
+public class FirstInputPanel extends JFrame {
     private BufferedImage background;
 
     public FirstInputPanel() {
