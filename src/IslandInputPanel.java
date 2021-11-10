@@ -17,7 +17,7 @@ public class IslandInputPanel extends JPanel implements MouseListener {
             //this.ForbiddenIslandBG= ImageIO.read(Objects.requireNonNull(IslandInputPanel.class.getResource("Images/Possible Forbidden Island BG.jpg")));
             this.FirstScreen = ImageIO.read(Objects.requireNonNull(IslandInputPanel.class.getResource("Images/FirstScreen.jpg")));
         } catch (Exception E) {
-            System.out.println(E);
+            System.out.println("exception error");
         }
     }
 
