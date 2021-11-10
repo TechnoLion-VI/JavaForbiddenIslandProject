@@ -9,6 +9,7 @@ public class IslandInputPanel extends JPanel{
 
     public IslandInputPanel() {
         try {
+            //Commented out original bg
             //this.ForbiddenIslandBG= ImageIO.read(Objects.requireNonNull(IslandInputPanel.class.getResource("Images/forbidden-island-background.jpg")));
             this.ForbiddenIslandBG= ImageIO.read(Objects.requireNonNull(IslandInputPanel.class.getResource("Images/Possible Forbidden Island BG.jpg")));
         } catch (Exception E) {
@@ -17,6 +18,6 @@ public class IslandInputPanel extends JPanel{
     }
 
     public void paint(Graphics g) {
-        g.drawImage(this.ForbiddenIslandBG, 0, 0, 1450, 700, null);
+        g.drawImage(this.ForbiddenIslandBG, 0, 0, 1920, 1080, null);
     }
 }
