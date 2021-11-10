@@ -6,8 +6,11 @@ import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.util.Objects;
 
+import static java.awt.SystemColor.window;
+
 public class IslandInputPanel extends JPanel implements MouseListener {
     private BufferedImage ForbiddenIslandBG, FirstScreen;
+
 
     public IslandInputPanel() {
 
@@ -22,7 +25,7 @@ public class IslandInputPanel extends JPanel implements MouseListener {
     }
 
     public void paint(Graphics g) {
-        g.drawImage(this.FirstScreen, 0, 0, 1980, 1080, null);
+        g.drawImage(this.FirstScreen, 0, 0, getWidth(), getHeight(), null);
   //vertical line
     }
 
