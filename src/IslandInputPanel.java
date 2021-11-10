@@ -10,6 +10,7 @@ public class IslandInputPanel extends JPanel implements MouseListener {
     private BufferedImage ForbiddenIslandBG, FirstScreen;
 
     public IslandInputPanel() {
+
         try {
             //Commented out original bg
             //this.ForbiddenIslandBG= ImageIO.read(Objects.requireNonNull(IslandInputPanel.class.getResource("Images/forbidden-island-background.jpg")));
