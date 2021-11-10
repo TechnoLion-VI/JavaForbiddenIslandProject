@@ -9,7 +9,7 @@ import java.util.Objects;
 
 public class IslandInputPanel extends JPanel implements MouseListener{
     private BufferedImage FirstScreen;
-
+    Boolean hasPlayed = false;
 
     public IslandInputPanel() {
 
@@ -28,11 +28,12 @@ public class IslandInputPanel extends JPanel implements MouseListener{
     public void mouseClicked(MouseEvent e) {
         int x = e.getX();
         int y = e.getY();
-        if (x > 142 && x < 317 && y > 333 && y < 402)
-            System.out.println("Start pressed");
+        if (x > 142 && x < 317 && y > 333 && y < 402) {
+            IslandFrame frame = new IslandFrame("Forbidden Island");
+            
+        }
         if (x > 142 && x < 317 && y > 420 && y < 489)
-            System.out.println("Quit pressed");
-
+            System.exit(0);
         repaint();
     }
 
