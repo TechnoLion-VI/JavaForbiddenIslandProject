@@ -22,7 +22,7 @@ public class IslandInputPanel extends JPanel implements MouseListener {
     }
 
     public void paint(Graphics g) {
-        g.drawImage(this.FirstScreen, 0, 0, 1920, 1080, null);
+        g.drawImage(this.FirstScreen, 0, 0, 1550, 800, null);
     }
 
     @Override
