@@ -6,9 +6,11 @@ public class IslandFrame extends JFrame {
 
     public IslandFrame(String framename) {
         super(framename);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(3);
         setSize(WIDTH, HEIGHT);
+        add(new IslandInputPanel());
         setVisible(true);
+        setResizable(true);
     }
 }
 
