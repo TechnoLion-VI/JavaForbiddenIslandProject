@@ -8,55 +8,23 @@ import java.util.Objects;
 
 import static java.awt.SystemColor.window;
 
-public class IslandInputPanel extends JPanel implements MouseListener {
-    private BufferedImage ForbiddenIslandBG, FirstScreen;
+public class IslandInputPanel extends JPanel {
+    private BufferedImage FirstScreen;
 
 
     public IslandInputPanel() {
 
         try {
-            //Commented out original bg
-            //this.ForbiddenIslandBG= ImageIO.read(Objects.requireNonNull(IslandInputPanel.class.getResource("Images/forbidden-island-background.jpg")));
-            //this.ForbiddenIslandBG= ImageIO.read(Objects.requireNonNull(IslandInputPanel.class.getResource("Images/Possible Forbidden Island BG.jpg")));
-            this.FirstScreen = ImageIO.read(Objects.requireNonNull(IslandInputPanel.class.getResource("Images/FirstScreen.jpg")));
+            FirstScreen = ImageIO.read(Objects.requireNonNull(IslandInputPanel.class.getResource("Images/Forbidden Island Start.jpg")));
         } catch (Exception E) {
             System.out.println("exception error");
         }
     }
 
     public void paint(Graphics g) {
-        g.drawImage(this.FirstScreen, 0, 0, getWidth(), getHeight(), null);
-  //vertical line
+        g.drawImage(FirstScreen, 0, 0, 457, 576, null);
     }
-
-    //517 is from the elft, where the button starts
-    //1020 is from the right, where the button ends
-    //198
-    //1550 and 800 were original
-
-
-
-
-
-    @Override
-    public void mousePressed(MouseEvent e){}
-
-    @Override
-    public void mouseReleased(MouseEvent e) {}
-
-    @Override
-    public void mouseEntered(MouseEvent e) {}
-
-    @Override
-    public void mouseExited(MouseEvent e) {}
-
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        System.out.println(e.getX()+ " "+e.getY());
-        //if(e.getButton() == e.BUTTON1) {
-           // if()
-        }
-    }
+}
 
 
 
