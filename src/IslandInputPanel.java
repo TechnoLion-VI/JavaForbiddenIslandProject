@@ -30,8 +30,11 @@ public class IslandInputPanel extends JPanel implements MouseListener{
         int x = e.getX();
         int y = e.getY();
         if (x > 142 && x < 317 && y > 333 && y < 402) {
-           frame2= new IslandFrame("Forbidden Island");
-           this.frame.setVisible(false);
+               frame2= new IslandFrame("Forbidden Island");
+               this.frame.setVisible(false);
+               frame2.add(new FirstInputs());
+               frame2.repaint();
+               frame2.revalidate();
         }
         if (x > 142 && x < 317 && y > 420 && y < 489)
             System.exit(0);

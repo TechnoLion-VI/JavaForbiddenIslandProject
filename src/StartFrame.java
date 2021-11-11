@@ -12,10 +12,12 @@ public class StartFrame extends JFrame {
         setDefaultCloseOperation(3);
         setSize(WIDTH, HEIGHT);
         setLocation(500,200);
-        setResizable(true);
+        setResizable(false);
         add(new IslandInputPanel(this));
         setVisible(true);
+
     }
+
 }
 
 
