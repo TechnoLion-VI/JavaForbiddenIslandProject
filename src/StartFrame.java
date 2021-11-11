@@ -14,11 +14,8 @@ public class StartFrame extends JFrame {
         setSize(WIDTH, HEIGHT);
         setLocation(500,200);
         setResizable(true);
-        add(new IslandInputPanel());
+        add(new IslandInputPanel(this));
         setVisible(true);
-        if(idk.showUp == true) {
-            setVisible(false);
-        }
 
     }
 
