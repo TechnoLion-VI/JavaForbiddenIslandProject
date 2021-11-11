@@ -1,9 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowEvent;
 
 public class StartFrame extends JFrame {
         int WIDTH = 457;
         int HEIGHT = 567;
+        IslandInputPanel idk;
 
 
     public StartFrame(String framename) {
@@ -14,8 +16,14 @@ public class StartFrame extends JFrame {
         setResizable(true);
         add(new IslandInputPanel());
         setVisible(true);
+        if(idk.showUp == true) {
+            setVisible(false);
+        }
+
     }
-}
+
+    }
+
 
 
 
