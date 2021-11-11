@@ -7,7 +7,6 @@ public class StartFrame extends JFrame {
         int HEIGHT = 567;
         IslandInputPanel idk;
 
-
     public StartFrame(String framename) {
         super(framename);
         setDefaultCloseOperation(3);
@@ -16,10 +15,8 @@ public class StartFrame extends JFrame {
         setResizable(true);
         add(new IslandInputPanel(this));
         setVisible(true);
-
     }
-
-    }
+}
 
 
 

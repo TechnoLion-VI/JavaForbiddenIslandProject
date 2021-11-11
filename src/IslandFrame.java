@@ -4,7 +4,6 @@ public class IslandFrame extends JFrame {
     int WIDTH = 1600;
     int HEIGHT = 900;
 
-
     public IslandFrame(String framename) {
         super(framename);
         setDefaultCloseOperation(3);
@@ -13,7 +12,5 @@ public class IslandFrame extends JFrame {
         setResizable(true);
         add(new IslandPanel());
         setVisible(true);
-
     }
-
 }

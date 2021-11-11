@@ -3,16 +3,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.util.Objects;
-
 
 public class IslandInputPanel extends JPanel implements MouseListener{
     private BufferedImage FirstScreen;
     private JFrame frame;
-    Boolean hasPlayed = false;
-    Boolean showUp;
     IslandFrame frame2;
 
     public IslandInputPanel(JFrame frame) {
@@ -35,31 +31,18 @@ public class IslandInputPanel extends JPanel implements MouseListener{
         int y = e.getY();
         if (x > 142 && x < 317 && y > 333 && y < 402) {
            frame2= new IslandFrame("Forbidden Island");
-           showUp = true;
            this.frame.setVisible(false);
-
-        //play button
-            
         }
-
         if (x > 142 && x < 317 && y > 420 && y < 489)
             System.exit(0);
         repaint();
-
-        //quit button
     }
 
     public void mousePressed(MouseEvent e) {}
-
     public void mouseReleased(MouseEvent e) {}
-
     public void mouseEntered(MouseEvent e) {}
-
     public void mouseExited(MouseEvent e) {}
-
-
-
-    }
+}
 
 
 
