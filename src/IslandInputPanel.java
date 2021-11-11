@@ -6,53 +6,45 @@ import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.util.Objects;
 
-public class IslandInputPanel extends JPanel implements MouseListener {
-    private BufferedImage ForbiddenIslandBG, HelpButton;
+public class IslandInputPanel extends JPanel implements MouseListener{
+    private BufferedImage FirstScreen;
+    private JFrame frame;
+    IslandFrame frame2;
 
-    public IslandInputPanel() {
+    public IslandInputPanel(JFrame frame) {
+        this.frame = frame;
 
         try {
-            this.ForbiddenIslandBG = ImageIO.read(Objects.requireNonNull(IslandInputPanel.class.getResource("Images/FirstScreen.jpg")));
-            this.HelpButton = ImageIO.read(Objects.requireNonNull(IslandInputPanel.class.getResource("Images/FirstScreen.jpg")));
+            FirstScreen = ImageIO.read(Objects.requireNonNull(IslandInputPanel.class.getResource("Images/Forbidden Island Start.jpg")));
         } catch (Exception E) {
             System.out.println("exception error");
         }
+        addMouseListener(this);
     }
 
     public void paint(Graphics g) {
-        g.drawImage(this.ForbiddenIslandBG, 0, 0, 1980, 1080, null);
-        g.drawImage(this.HelpButton,0,0,50,50,null);
-  //vertical line
+
+        g.drawImage(FirstScreen, 0, 0, 457, 576, null);
     }
 
-    //517 is from the elft, where the button starts
-    //1020 is from the right, where the button ends
-    //198
-    //1550 and 800 were original
-
-
-
-
-
-    @Override
-    public void mousePressed(MouseEvent e){}
-
-    @Override
-    public void mouseReleased(MouseEvent e) {}
-
-    @Override
-    public void mouseEntered(MouseEvent e) {}
-
-    @Override
-    public void mouseExited(MouseEvent e) {}
-
-    @Override
     public void mouseClicked(MouseEvent e) {
-        System.out.println(e.getX()+ " "+e.getY());
-        //if(e.getButton() == e.BUTTON1) {
-           // if()
+        int x = e.getX();
+        int y = e.getY();
+        if (x > 142 && x < 317 && y > 333 && y < 402) {
+           frame2= new IslandFrame("Forbidden Island Input");
+           this.frame.setVisible(false);
         }
+        if (x > 142 && x < 317 && y > 420 && y < 489)
+            System.exit(0);
+        repaint();
     }
+
+    public void mousePressed(MouseEvent e) {}
+    public void mouseReleased(MouseEvent e) {}
+    public void mouseEntered(MouseEvent e) {}
+    public void mouseExited(MouseEvent e) {}
+}
+
 
 
 
