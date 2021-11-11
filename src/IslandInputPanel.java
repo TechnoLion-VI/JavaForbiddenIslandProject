@@ -7,14 +7,16 @@ import java.awt.image.BufferedImage;
 import java.util.Objects;
 
 public class IslandInputPanel extends JPanel implements MouseListener{
-    private BufferedImage FirstScreen;
+    private BufferedImage FirstScreen, HelpButton;
     private JFrame frame;
     IslandFrame frame2;
+    HelpFrame frame3;
 
     public IslandInputPanel(JFrame frame) {
         this.frame = frame;
 
         try {
+            HelpButton = ImageIO.read(Objects.requireNonNull(IslandInputPanel.class.getResource("Images/help-button_adobespark.png")));
             FirstScreen = ImageIO.read(Objects.requireNonNull(IslandInputPanel.class.getResource("Images/Forbidden Island Start.jpg")));
         } catch (Exception E) {
             System.out.println("exception error");
@@ -25,6 +27,7 @@ public class IslandInputPanel extends JPanel implements MouseListener{
     public void paint(Graphics g) {
 
         g.drawImage(FirstScreen, 0, 0, 457, 576, null);
+        g.drawImage(HelpButton,-5,-5,40,40,null);
     }
 
     public void mouseClicked(MouseEvent e) {
@@ -36,6 +39,10 @@ public class IslandInputPanel extends JPanel implements MouseListener{
         }
         if (x > 142 && x < 317 && y > 420 && y < 489)
             System.exit(0);
+        if (x > 0 && x < 45 && y > 0 && y < 45) {
+            frame3 = new HelpFrame("Help");
+            this.frame.setVisible(false);
+        }
         repaint();
     }
 
