@@ -27,6 +27,7 @@ public class IslandInputPanel extends JPanel implements MouseListener{
     }
 
     public void paint(Graphics g) {
+
         g.drawImage(FirstScreen, 0, 0, 457, 576, null);
     }
 
@@ -50,11 +51,8 @@ public class IslandInputPanel extends JPanel implements MouseListener{
     }
 
     public void mousePressed(MouseEvent e) {}
-
     public void mouseReleased(MouseEvent e) {}
-
     public void mouseEntered(MouseEvent e) {}
-
     public void mouseExited(MouseEvent e) {}
 
 
