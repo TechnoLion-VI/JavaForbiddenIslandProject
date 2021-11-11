@@ -9,6 +9,7 @@ public class IslandFrame extends JFrame {
         setDefaultCloseOperation(3);
         setSize(WIDTH, HEIGHT);
         add(new IslandInputPanel());
+        AnchorPane anchorPaneRef=new AnchorPane();
         setVisible(true);
         setResizable(true);
     }
