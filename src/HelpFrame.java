@@ -56,7 +56,7 @@ public class HelpFrame extends JFrame {
             "1. If both Temples, Caves, Palaces, or Gardens tiles sink before you collect their respective treasures.\n" +
             "2. If the Fools’ Landing tile sinks.\n" +
             "3. If any player is on an Island tile that sinks and there is no adjacent tile to swim to.\n" +
-            "4. If the water level reaches the skull and crossbones.");
+            "4. If the water level reaches the skull and crossbones.HAVE FUN AND BE COOPERATIVE WITH YOUR TEAM!");
 
     public HelpFrame(String framename) {
         super(framename);
