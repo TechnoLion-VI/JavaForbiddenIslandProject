@@ -1,2 +1,5 @@
-public class IslandPanel {
+import javax.swing.*;
+
+public class IslandPanel extends JPanel{
+
 }
