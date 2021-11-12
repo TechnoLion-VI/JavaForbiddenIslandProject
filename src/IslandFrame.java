@@ -10,6 +10,7 @@ public class IslandFrame extends JFrame {
         setSize(WIDTH, HEIGHT);
         setVisible(true);
         setResizable(true);
+        add(new IslandPanel());
     }
 }
 
