@@ -1,20 +1,22 @@
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class FirstInputs extends JPanel implements ActionListener {
+import javax.swing.*;
+
+public class FirstInputs extends JPanel{
+    JRadioButton jRadioButton1;
+    JRadioButton jRadioButton2;
+    JRadioButton jRadioButton3;
+    JRadioButton jRadioButton4;
+    JRadioButton jRadioButton5;
+    JRadioButton jRadioButton6;
+    JRadioButton jRadioButton7;
+    JButton jButton;
+    ButtonGroup G1,G2;
+    JLabel L1, L2;
+    int numberOfPlayers;
+    String levelOfDifficulty;
 
     public FirstInputs() {
-        JRadioButton jRadioButton1;
-        JRadioButton jRadioButton2;
-        JRadioButton jRadioButton3;
-        JRadioButton jRadioButton4;
-        JRadioButton jRadioButton5;
-        JRadioButton jRadioButton6;
-        JRadioButton jRadioButton7;
-        JButton jButton;
-        ButtonGroup G1;
-        JLabel L1, L2;
+
         jRadioButton1 = new JRadioButton();
         jRadioButton2 = new JRadioButton();
         jRadioButton3 = new JRadioButton();
@@ -24,6 +26,7 @@ public class FirstInputs extends JPanel implements ActionListener {
         jRadioButton7 = new JRadioButton();
         jButton = new JButton("Confirm");
         G1 = new ButtonGroup();
+        G2 = new ButtonGroup();
         L1 = new JLabel("Pick Number Of Players: ");
         L2 = new JLabel("           Pick Level Of Difficulty: ");
         jRadioButton1.setText("2");
@@ -48,13 +51,45 @@ public class FirstInputs extends JPanel implements ActionListener {
         G1.add(jRadioButton1);
         G1.add(jRadioButton2);
         G1.add(jRadioButton3);
-        G1.add(jRadioButton4);
-        G1.add(jRadioButton5);
-        G1.add(jRadioButton6);
-        G1.add(jRadioButton7);
-        setVisible(true);
+        G2.add(jRadioButton4);
+        G2.add(jRadioButton5);
+        G2.add(jRadioButton6);
+        G2.add(jRadioButton7);
+
+        add(jButton);
+
+
+        jButton.addActionListener(e -> {
+            if(jRadioButton1.isSelected())
+                setNumOfPlayers(2);
+            if(jRadioButton2.isSelected())
+                setNumOfPlayers(3);
+            if(jRadioButton3.isSelected())
+                setNumOfPlayers(4);
+            if(jRadioButton4.isSelected())
+                setLevelOfDifficulty("Novice");
+            if(jRadioButton4.isSelected())
+                setLevelOfDifficulty("Normal");
+            if(jRadioButton4.isSelected())
+                setLevelOfDifficulty("Elite");
+            if(jRadioButton4.isSelected())
+                setLevelOfDifficulty("Legendary");
+        });
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {}
+    public int getNumOfPlayers(){
+        return numberOfPlayers;
+    }
+
+    public void setNumOfPlayers(int number){
+        numberOfPlayers = number;
+    }
+
+    public String getLevelOfDifficulty(){
+        return levelOfDifficulty;
+    }
+
+    public void setLevelOfDifficulty(String level){
+        levelOfDifficulty = level;
+    }
 }
