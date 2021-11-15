@@ -74,6 +74,7 @@ public class FirstInputs extends JPanel{
                 setLevelOfDifficulty("Elite");
             if(jRadioButton4.isSelected())
                 setLevelOfDifficulty("Legendary");
+            MainIslandFrame ActualGame = new MainIslandFrame("Board Game");
         });
     }
 
