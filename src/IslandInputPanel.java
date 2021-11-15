@@ -43,7 +43,6 @@ public class IslandInputPanel extends JPanel implements MouseListener{
             System.exit(0);
         if (x > 0 && x < 45 && y > 0 && y < 45) {
             frame3 = new HelpFrame("Help");
-            this.frame.setVisible(false);
         }
         repaint();
     }
