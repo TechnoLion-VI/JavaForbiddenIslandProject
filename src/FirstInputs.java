@@ -1,7 +1,7 @@
 
 import javax.swing.*;
 
-public class FirstInputs extends JPanel{
+public class FirstInputs extends JPanel {
     JRadioButton jRadioButton1;
     JRadioButton jRadioButton2;
     JRadioButton jRadioButton3;
@@ -10,7 +10,7 @@ public class FirstInputs extends JPanel{
     JRadioButton jRadioButton6;
     JRadioButton jRadioButton7;
     JButton jButton;
-    ButtonGroup G1,G2;
+    ButtonGroup G1, G2;
     JLabel L1, L2;
     int numberOfPlayers;
     String levelOfDifficulty;
@@ -60,36 +60,44 @@ public class FirstInputs extends JPanel{
 
 
         jButton.addActionListener(e -> {
-            if(jRadioButton1.isSelected())
+            if (jRadioButton1.isSelected())
                 setNumOfPlayers(2);
-            if(jRadioButton2.isSelected())
+            if (jRadioButton2.isSelected())
                 setNumOfPlayers(3);
-            if(jRadioButton3.isSelected())
+            if (jRadioButton3.isSelected())
                 setNumOfPlayers(4);
-            if(jRadioButton4.isSelected())
+            if (jRadioButton4.isSelected())
                 setLevelOfDifficulty("Novice");
-            if(jRadioButton4.isSelected())
+            if (jRadioButton4.isSelected())
                 setLevelOfDifficulty("Normal");
-            if(jRadioButton4.isSelected())
+            if (jRadioButton4.isSelected())
                 setLevelOfDifficulty("Elite");
-            if(jRadioButton4.isSelected())
+            if (jRadioButton4.isSelected())
                 setLevelOfDifficulty("Legendary");
         });
     }
 
-    public int getNumOfPlayers(){
+    public int getNumOfPlayers() {
         return numberOfPlayers;
     }
 
-    public void setNumOfPlayers(int number){
+    public void setNumOfPlayers(int number) {
         numberOfPlayers = number;
     }
 
-    public String getLevelOfDifficulty(){
+    public String getLevelOfDifficulty() {
         return levelOfDifficulty;
     }
 
-    public void setLevelOfDifficulty(String level){
+    public void setLevelOfDifficulty(String level) {
         levelOfDifficulty = level;
     }
+
+    public boolean ConfirmIsPressed() {
+        if (jButton.getModel().isPressed()) {
+            return true;
+        }
+        return false;
+    }
 }
+
