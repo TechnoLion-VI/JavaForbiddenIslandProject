@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Objects;
 import java.util.Random;
 import javax.imageio.ImageIO;
@@ -14,6 +15,7 @@ import javax.imageio.ImageIO;
 public class IslandPanel extends JPanel {
     private BufferedImage one, two, three, four, fifth, sixth, seventh, eighth, ninth, tenth, eleventh, twelvth, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty, twentyone, twentytwo, twentythree, twentyfour;
     private ArrayList<BufferedImage> Islands = new <BufferedImage>ArrayList();
+    private ArrayList<Integer> duplicates = new <Integer> ArrayList();
 
     public IslandPanel() {
         try {
@@ -76,6 +78,10 @@ public class IslandPanel extends JPanel {
         Islands.add(twentyfour);
     }
 
+    public void fillDuplicateArray(int ind) {
+
+    }
+
     public void paint(Graphics g) {
         int x = 650;
         int y = 100;
@@ -84,46 +90,54 @@ public class IslandPanel extends JPanel {
         int x3 = 450;
         int y3 = 300;
         fillArray();
-        System.out.println(Islands.size());
         int index = (int) (Math.random() * Islands.size());
+        System.out.println(Islands.size());
         for (int i = 0; i < 2; i++) {
             //generating the index using math.random()
             g.drawImage(Islands.get(index), x, y, 100, 100, null);
             x=x+100;
+            Collections.shuffle(Islands);
 
             }
         for(int j = 1; j < 5; j++) {
-            g.drawImage(Islands.get(index), x2, y2, 100, 100, null);
+            g.drawImage(Islands.get((int) (Math.random() * Islands.size())), x2, y2, 100, 100, null);
             x2 = x2+100;
+            Collections.shuffle(Islands);
             }
         x2=550;
         for(int k = 1; k<5; k++) {
-            g.drawImage(Islands.get(index), x2, y2+100, 100, 100, null);
+            g.drawImage(Islands.get((int) (Math.random() * Islands.size())), x2, y2+100, 100, 100, null);
             x2 = x2+100;
+            Collections.shuffle(Islands);
         }
         x2=550;
         for(int k = 1; k<5; k++) {
-            g.drawImage(Islands.get(index), x2, y2+200, 100, 100, null);
+            g.drawImage(Islands.get((int) (Math.random() * Islands.size())), x2, y2+200, 100, 100, null);
             x2 = x2+100;
+            Collections.shuffle(Islands);
         }
         x2=550;
         for(int k = 1; k<5; k++) {
-            g.drawImage(Islands.get(index), x2, y2+300, 100, 100, null);
+            g.drawImage(Islands.get((int) (Math.random() * Islands.size())), x2, y2+300, 100, 100, null);
             x2 = x2+100;
+            Collections.shuffle(Islands);
         }
 
         for(int u = 0; u < 2; u++) {
-            g.drawImage(Islands.get(index), x-200, y2+400, 100, 100, null);
+            g.drawImage(Islands.get((int) (Math.random() * Islands.size())), x-200, y2+400, 100, 100, null);
             x=x+100;
+            Collections.shuffle(Islands);
         }
         y2=200;
         for(int r = 0; r < 2; r++) {
-            g.drawImage(Islands.get(index), x2, y2+100, 100, 100, null);
+            g.drawImage(Islands.get((int) (Math.random() * Islands.size())), x2, y2+100, 100, 100, null);
             y2=y2+100;
+            Collections.shuffle(Islands);
         }
         for(int l = 0; l <2; l++) {
-            g.drawImage(Islands.get(index), x3, y3, 100, 100, null);
+            g.drawImage(Islands.get((int) (Math.random() * Islands.size())), x3, y3, 100, 100, null);
             y3=y3+100;
+            Collections.shuffle(Islands);
         }
         }
 
