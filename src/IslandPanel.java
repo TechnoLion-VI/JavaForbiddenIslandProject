@@ -1,12 +1,12 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
-import java.awt.Graphics;
 import java.util.Random;
 import javax.imageio.ImageIO;
 
@@ -17,16 +17,17 @@ public class IslandPanel extends JPanel {
 
     public IslandPanel() {
         try {
+            Islands = new ArrayList<BufferedImage>();
             one = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Breakers Bridge@2x.png")));
             two = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Bronze Gate@2x.png")));
-            three = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Cave Of Embers@2x.png")));
-            four = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Cave Of Shadows@2x.png")));
-            fifth = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Cliffs Of Abandon@2x.png")));
+            three = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Cave of Embers@2x.png")));
+            four = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Cave of Shadows@2x.png")));
+            fifth = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Cliffs of Abandon@2x.png")));
             sixth = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Copper Gate@2x.png")));
             seventh = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Coral Palace@2x.png")));
             eighth = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Crimson Forest@2x.png")));
-            ninth = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Dunes Of Deception@2x.png")));
-            tenth = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Fools_Landing@2x.png")));
+            ninth = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Dunes of Deception@2x.png")));
+            tenth = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Fools_ Landing@2x.png")));
             eleventh = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Gold Gate@2x.png")));
             twelvth = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Howling Garden@2x.png")));
             thirteen = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Iron Gate@2x.png")));
@@ -42,45 +43,112 @@ public class IslandPanel extends JPanel {
             twentythree = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Watchtower@2x.png")));
             twentyfour = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Whispering Garden@2x.png")));
 
-            Islands.add(one);
-            Islands.add(two);
-            Islands.add(three);
-            Islands.add(four);
-            Islands.add(fifth);
-            Islands.add(sixth);
-            Islands.add(seventh);
-            Islands.add(eighth);
-            Islands.add(ninth);
-            Islands.add(tenth);
-            Islands.add(eleventh);
-            Islands.add(twelvth);
-            Islands.add(thirteen);
-            Islands.add(fourteen);
-            Islands.add(fifteen);
-            Islands.add(sixteen);
-            Islands.add(seventeen);
-            Islands.add(eighteen);
-            Islands.add(nineteen);
-            Islands.add(twenty);
-            Islands.add(twentyone);
-            Islands.add(twentytwo);
-            Islands.add(twentythree);
-            Islands.add(twentyfour);
-
 
         } catch (Exception e) {
             System.out.println("Exception error");
         }
     }
 
-        public void paint(Graphics g) {
-            Random generate = new Random();
-            g.drawImage(one, 400, 500, 300, 300, null);
+    public void fillArray() {
+        Islands.add(one);
+        Islands.add(two);
+        Islands.add(three);
+        Islands.add(four);
+        Islands.add(fifth);
+        Islands.add(sixth);
+        Islands.add(seventh);
+        Islands.add(eighth);
+        Islands.add(ninth);
+        Islands.add(tenth);
+        Islands.add(eleventh);
+        Islands.add(twelvth);
+        Islands.add(thirteen);
+        Islands.add(fourteen);
+        Islands.add(fifteen);
+        Islands.add(sixteen);
+        Islands.add(seventeen);
+        Islands.add(eighteen);
+        Islands.add(nineteen);
+        Islands.add(twenty);
+        Islands.add(twentyone);
+        Islands.add(twentytwo);
+        Islands.add(twentythree);
+        Islands.add(twentyfour);
+    }
+
+    public void paint(Graphics g) {
+        int x = 650;
+        int y = 100;
+        int x2 = 550;
+        int y2 = 200;
+        int x3 = 450;
+        int y3 = 300;
+        fillArray();
+        System.out.println(Islands.size());
+        int index = (int) (Math.random() * Islands.size());
+        for (int i = 0; i < 2; i++) {
+            //generating the index using math.random()
+            g.drawImage(Islands.get(index), x, y, 100, 100, null);
+            x=x+100;
+
+            }
+        for(int j = 1; j < 5; j++) {
+            g.drawImage(Islands.get(index), x2, y2, 100, 100, null);
+            x2 = x2+100;
+            }
+        x2=550;
+        for(int k = 1; k<5; k++) {
+            g.drawImage(Islands.get(index), x2, y2+100, 100, 100, null);
+            x2 = x2+100;
+        }
+        x2=550;
+        for(int k = 1; k<5; k++) {
+            g.drawImage(Islands.get(index), x2, y2+200, 100, 100, null);
+            x2 = x2+100;
+        }
+        x2=550;
+        for(int k = 1; k<5; k++) {
+            g.drawImage(Islands.get(index), x2, y2+300, 100, 100, null);
+            x2 = x2+100;
+        }
+
+        for(int u = 0; u < 2; u++) {
+            g.drawImage(Islands.get(index), x-200, y2+400, 100, 100, null);
+            x=x+100;
+        }
+        y2=200;
+        for(int r = 0; r < 2; r++) {
+            g.drawImage(Islands.get(index), x2, y2+100, 100, 100, null);
+            y2=y2+100;
+        }
+        for(int l = 0; l <2; l++) {
+            g.drawImage(Islands.get(index), x3, y3, 100, 100, null);
+            y3=y3+100;
+        }
+        }
+
             }
 
 
 
-        }
+
+
+
+
+
+
+
+
+            //Across, increase x by 100
+            //Downwards, increase y by 100
+            //top row with 2 tiles- g.drawImage(one, 650, 100, 100, 100, null);
+
+
+
+
+
+
+
 
 
 
