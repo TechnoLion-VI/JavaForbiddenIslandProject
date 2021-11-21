@@ -10,9 +10,15 @@ import java.util.Objects;
 public class IslandPanel extends JPanel {
     private BufferedImage one, two, three, four, fifth, sixth, seventh, eighth, ninth, tenth, eleventh, twelvth, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty, twentyone, twentytwo, twentythree, twentyfour;
     private ArrayList<BufferedImage> Islands = new <BufferedImage>ArrayList();
+    private BufferedImage Lion, goblet, crystal, fire;
 
     public IslandPanel() {
         try {
+            Lion = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/lion.png")));
+            goblet = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/GobletOfWater.png")));
+            crystal = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/CrystalStone.png")));
+            fire = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Fire.png")));
+
             one = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Breakers Bridge@2x.png")));
             two = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Bronze Gate@2x.png")));
             three = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Cave of Embers@2x.png")));
@@ -37,6 +43,8 @@ public class IslandPanel extends JPanel {
             twentytwo = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Twilight Hollow@2x.png")));
             twentythree = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Watchtower@2x.png")));
             twentyfour = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Whispering Garden@2x.png")));
+
+
 
         } catch (Exception e) {
             System.out.println("Exception error");
@@ -78,6 +86,9 @@ public class IslandPanel extends JPanel {
         int x3 = 450;
         int y3 = 300;
         fillArray();
+
+        g.drawImage(goblet, 500, 300, 100, 100, null);
+
 
         System.out.println(Islands.size());
 
@@ -153,5 +164,7 @@ public class IslandPanel extends JPanel {
             y3=y3+100;
             Collections.shuffle(Islands);
         }
+
     }
+
 }
