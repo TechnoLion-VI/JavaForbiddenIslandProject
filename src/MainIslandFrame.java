@@ -7,9 +7,9 @@ public class MainIslandFrame extends JFrame {
     public MainIslandFrame(String framename) {
         super(framename);
         setDefaultCloseOperation(3);
-        setSize(WIDTH, HEIGHT);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setResizable(false);
         setVisible(true);
-        setResizable(true);
         add(new IslandPanel());
     }
 }
