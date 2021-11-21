@@ -79,6 +79,9 @@ public class IslandPanel extends JPanel {
     }
 
     public void paint(Graphics g) {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        double width = screenSize.getWidth();
+        double height = screenSize.getHeight();
         int x = 650;
         int y = 100;
         int x2 = 550;
