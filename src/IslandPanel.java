@@ -92,7 +92,7 @@ public class IslandPanel extends JPanel {
 
         for(int j = 1; j < 5; j++) {
             int h;
-            g.drawImage(Islands.get(h =(int) (Math.random() * Islands.size())), x2, y2, 100, 100, null);
+            g.drawImage(Islands.get(h = (int) (Math.random() * Islands.size())), x2, y2, 100, 100, null);
             Islands.remove(h);
             x2 = x2+100;
             Collections.shuffle(Islands);

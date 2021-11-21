@@ -1,8 +1,10 @@
-import java.awt.event.WindowEvent;
+import com.formdev.flatlaf.FlatDarculaLaf;
+import com.formdev.flatlaf.FlatIntelliJLaf;
 
 public class ForbiddenIslandRunner {
     public static StartFrame frame;
     public static void main(String[] args) {
-         frame = new StartFrame("Forbidden Island start");
+         FlatDarculaLaf.setup();
+        frame = new StartFrame("Forbidden Island start");
     }
 }
