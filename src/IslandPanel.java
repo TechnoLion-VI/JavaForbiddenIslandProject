@@ -10,7 +10,7 @@ import java.util.Objects;
 public class IslandPanel extends JPanel {
     private BufferedImage one, two, three, four, fifth, sixth, seventh, eighth, ninth, tenth, eleventh, twelvth, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty, twentyone, twentytwo, twentythree, twentyfour;
     private ArrayList<BufferedImage> Islands = new <BufferedImage>ArrayList();
-    private BufferedImage Lion, goblet, crystal, fire;
+    private BufferedImage Lion, goblet, crystal, fire, water, red;
 
     public IslandPanel() {
         try {
@@ -18,6 +18,9 @@ public class IslandPanel extends JPanel {
             goblet = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/GobletOfWater.png")));
             crystal = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/CrystalStone.png")));
             fire = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Fire.png")));
+            water = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/WaterLevel.JPG")));
+            red = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/TickMark.jpg")));
+
 
             one = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Breakers Bridge@2x.png")));
             two = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Bronze Gate@2x.png")));
@@ -90,10 +93,32 @@ public class IslandPanel extends JPanel {
         int y3 = 300;
         fillArray();
 
-        g.drawImage(goblet, 500, 300, 100, 100, null);
+        FirstInputs stuff = new FirstInputs();
+        if(stuff.getLevelOfDifficulty() == "Normal") {
+            g.drawPolygon(new int[] {1130, 1130, 1165}, new int[] {334, 384, 359}, 3);
+            g.setColor(Color.RED);
+            g.fillPolygon(new int[] {1130, 1130, 1165}, new int[] {334, 384, 359}, 3);
+        }
+        else if(stuff.getLevelOfDifficulty() == "Novice") {
+            g.drawPolygon(new int[] {1130, 1130, 1165}, new int[] {370, 420, 395}, 3);
+            g.setColor(Color.RED);
+            g.fillPolygon(new int[] {1130, 1130, 1165}, new int[] {370, 420, 395}, 3);
+        }
+
+        g.drawImage(water, 1150, 30, 150, 450, null);
 
 
+
+
+
+        //g.drawPolygon(new int[] {100, 100, 200}, new int[] {100, 300, 200}, 3);
+        //g.setColor(Color.RED);
+        //g.fillPolygon(new int[]{100, 100, 200}, new int[]{100, 300, 200}, 3);
+
+        //between each level, theres a diff of 36 in height
         System.out.println(Islands.size());
+
+        System.out.println(stuff.getLevelOfDifficulty());
 
         for (int i = 0; i < 2; i++) {
             int j;
@@ -167,7 +192,12 @@ public class IslandPanel extends JPanel {
             y3=y3+100;
             Collections.shuffle(Islands);
         }
+        //FirstInputs stuff = new FirstInputs();
+
+        //if(stuff.getLevelOfDifficulty() == "Legendary")
+
+
 
     }
+    }
 
-}
