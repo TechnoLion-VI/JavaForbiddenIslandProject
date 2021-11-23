@@ -116,9 +116,10 @@ public class IslandPanel extends JPanel {
         //g.fillPolygon(new int[]{100, 100, 200}, new int[]{100, 300, 200}, 3);
 
         //between each level, theres a diff of 36 in height
-        System.out.println(Islands.size());
 
-        System.out.println(stuff.getLevelOfDifficulty());
+
+        System.out.println(stuff.levelOfDifficulty);
+        System.out.println(stuff.numberOfPlayers);
 
         for (int i = 0; i < 2; i++) {
             int j;
