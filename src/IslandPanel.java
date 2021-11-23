@@ -138,7 +138,7 @@ public class IslandPanel extends JPanel {
         }
 
         x2=550;
-
+//
         for(int k = 1; k<5; k++) {
             int f;
             g.drawImage(Islands.get(f = (int) (Math.random() * Islands.size())), x2, y2+100, 100, 100, null);
