@@ -3,19 +3,19 @@ import javax.swing.*;
 import java.awt.*;
 
 public class FirstInputs extends JPanel {
-    JRadioButton jRadioButton1;
-    JRadioButton jRadioButton2;
-    JRadioButton jRadioButton3;
-    JRadioButton jRadioButton4;
-    JRadioButton jRadioButton5;
-    JRadioButton jRadioButton6;
-    JRadioButton jRadioButton7;
-    JButton jButton;
-    ButtonGroup G1, G2;
-    JLabel L1, L2;
-    int numberOfPlayers;
-    String levelOfDifficulty;
-    Frame frame;
+    private JRadioButton jRadioButton1;
+    private JRadioButton jRadioButton2;
+    private JRadioButton jRadioButton3;
+    private JRadioButton jRadioButton4;
+    private JRadioButton jRadioButton5;
+    private JRadioButton jRadioButton6;
+    private JRadioButton jRadioButton7;
+    private JButton jButton;
+    private ButtonGroup G1, G2;
+    private JLabel L1, L2;
+    public static int numberOfPlayers;
+    public static String levelOfDifficulty;
+    private Frame frame;
 
     public FirstInputs() {
 
