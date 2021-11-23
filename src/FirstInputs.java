@@ -1,5 +1,6 @@
 
 import javax.swing.*;
+import java.awt.*;
 
 public class FirstInputs extends JPanel {
     JRadioButton jRadioButton1;
@@ -14,6 +15,7 @@ public class FirstInputs extends JPanel {
     JLabel L1, L2;
     int numberOfPlayers;
     String levelOfDifficulty;
+    Frame frame;
 
     public FirstInputs() {
 
@@ -70,8 +72,8 @@ public class FirstInputs extends JPanel {
         jButton.addActionListener(e -> {
             setNumOfPlayers(Integer.parseInt(G1.getSelection().getActionCommand()));
             setLevelOfDifficulty(G2.getSelection().getActionCommand());
-            System.out.println(getNumOfPlayers());
-            System.out.println(getLevelOfDifficulty());
+            frame = new MainIslandFrame("Forbidden Island");
+            setVisible(false);
         });
     }
 
@@ -89,13 +91,6 @@ public class FirstInputs extends JPanel {
 
     public void setLevelOfDifficulty(String level) {
         levelOfDifficulty = level;
-    }
-
-    public boolean ConfirmIsPressed() {
-        if (jButton.getModel().isPressed()) {
-            return true;
-        }
-        return false;
     }
 }
 
