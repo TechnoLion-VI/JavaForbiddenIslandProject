@@ -94,12 +94,12 @@ public class IslandPanel extends JPanel {
         fillArray();
 
         FirstInputs stuff = new FirstInputs();
-        if(stuff.getLevelOfDifficulty() == "Normal") {
+        if(FirstInputs.levelOfDifficulty.equals("Normal")) {
             g.drawPolygon(new int[] {1130, 1130, 1165}, new int[] {334, 384, 359}, 3);
             g.setColor(Color.RED);
             g.fillPolygon(new int[] {1130, 1130, 1165}, new int[] {334, 384, 359}, 3);
         }
-        else if(stuff.getLevelOfDifficulty() == "Novice") {
+        else if(FirstInputs.levelOfDifficulty.equals("Novice")) {
             g.drawPolygon(new int[] {1130, 1130, 1165}, new int[] {370, 420, 395}, 3);
             g.setColor(Color.RED);
             g.fillPolygon(new int[] {1130, 1130, 1165}, new int[] {370, 420, 395}, 3);
@@ -118,7 +118,7 @@ public class IslandPanel extends JPanel {
         //between each level, theres a diff of 36 in height
         System.out.println(Islands.size());
 
-        System.out.println(stuff.getLevelOfDifficulty());
+        System.out.println(FirstInputs.levelOfDifficulty);
 
         for (int i = 0; i < 2; i++) {
             int j;
