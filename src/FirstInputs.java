@@ -72,6 +72,8 @@ public class FirstInputs extends JPanel {
         jButton.addActionListener(e -> {
             setNumOfPlayers(Integer.parseInt(G1.getSelection().getActionCommand()));
             setLevelOfDifficulty(G2.getSelection().getActionCommand());
+            System.out.println(numberOfPlayers);
+            System.out.println(levelOfDifficulty);
             frame = new MainIslandFrame("Forbidden Island");
             setVisible(false);
         });
