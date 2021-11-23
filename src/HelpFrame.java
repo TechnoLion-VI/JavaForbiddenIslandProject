@@ -8,7 +8,7 @@ public class HelpFrame extends JFrame {
 
     public HelpFrame(String framename) {
         super(framename);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         setSize(WIDTH, HEIGHT);
         setLayout(new BorderLayout());
         JTabbedPane tp=new JTabbedPane();

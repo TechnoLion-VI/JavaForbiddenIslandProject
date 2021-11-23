@@ -1,7 +1,7 @@
 
 import javax.swing.*;
 
-public class FirstInputs extends JPanel{
+public class FirstInputs extends JPanel {
     JRadioButton jRadioButton1;
     JRadioButton jRadioButton2;
     JRadioButton jRadioButton3;
@@ -10,32 +10,40 @@ public class FirstInputs extends JPanel{
     JRadioButton jRadioButton6;
     JRadioButton jRadioButton7;
     JButton jButton;
-    ButtonGroup G1,G2;
+    ButtonGroup G1, G2;
     JLabel L1, L2;
     int numberOfPlayers;
     String levelOfDifficulty;
 
     public FirstInputs() {
 
-        jRadioButton1 = new JRadioButton();
-        jRadioButton2 = new JRadioButton();
-        jRadioButton3 = new JRadioButton();
-        jRadioButton4 = new JRadioButton();
-        jRadioButton5 = new JRadioButton();
-        jRadioButton6 = new JRadioButton();
-        jRadioButton7 = new JRadioButton();
-        jButton = new JButton("Confirm");
-        G1 = new ButtonGroup();
-        G2 = new ButtonGroup();
         L1 = new JLabel("Pick Number Of Players: ");
-        L2 = new JLabel("           Pick Level Of Difficulty: ");
+        G1 = new ButtonGroup();
+        jRadioButton1 = new JRadioButton();
         jRadioButton1.setText("2");
+        jRadioButton1.setActionCommand("2");
+        jRadioButton2 = new JRadioButton();
         jRadioButton2.setText("3");
+        jRadioButton2.setActionCommand("3");
+        jRadioButton3 = new JRadioButton();
         jRadioButton3.setText("4");
+        jRadioButton3.setActionCommand("4");
+
+        L2 = new JLabel("\nPick Level Of Difficulty: ");
+        G2 = new ButtonGroup();
+        jRadioButton4 = new JRadioButton();
         jRadioButton4.setText("Novice");
+        jRadioButton4.setActionCommand("Novice");
+        jRadioButton5 = new JRadioButton();
         jRadioButton5.setText("Normal");
+        jRadioButton5.setActionCommand("Normal");
+        jRadioButton6 = new JRadioButton();
         jRadioButton6.setText("Elite");
+        jRadioButton6.setActionCommand("Elite");
+        jRadioButton7 = new JRadioButton();
         jRadioButton7.setText("Legendary");
+        jRadioButton7.setActionCommand("Legendary");
+        jButton = new JButton("Confirm");
 
         this.add(L1);
         this.add(jRadioButton1);
@@ -60,37 +68,34 @@ public class FirstInputs extends JPanel{
 
 
         jButton.addActionListener(e -> {
-            if(jRadioButton1.isSelected())
-                setNumOfPlayers(2);
-            if(jRadioButton2.isSelected())
-                setNumOfPlayers(3);
-            if(jRadioButton3.isSelected())
-                setNumOfPlayers(4);
-            if(jRadioButton4.isSelected())
-                setLevelOfDifficulty("Novice");
-            if(jRadioButton4.isSelected())
-                setLevelOfDifficulty("Normal");
-            if(jRadioButton4.isSelected())
-                setLevelOfDifficulty("Elite");
-            if(jRadioButton4.isSelected())
-                setLevelOfDifficulty("Legendary");
-            MainIslandFrame ActualGame = new MainIslandFrame("Board Game");
+            setNumOfPlayers(Integer.parseInt(G1.getSelection().getActionCommand()));
+            setLevelOfDifficulty(G2.getSelection().getActionCommand());
+            System.out.println(getNumOfPlayers());
+            System.out.println(getLevelOfDifficulty());
         });
     }
 
-    public int getNumOfPlayers(){
+    public int getNumOfPlayers() {
         return numberOfPlayers;
     }
 
-    public void setNumOfPlayers(int number){
+    public void setNumOfPlayers(int number) {
         numberOfPlayers = number;
     }
 
-    public String getLevelOfDifficulty(){
+    public String getLevelOfDifficulty() {
         return levelOfDifficulty;
     }
 
-    public void setLevelOfDifficulty(String level){
+    public void setLevelOfDifficulty(String level) {
         levelOfDifficulty = level;
     }
+
+    public boolean ConfirmIsPressed() {
+        if (jButton.getModel().isPressed()) {
+            return true;
+        }
+        return false;
+    }
 }
+
