@@ -69,6 +69,7 @@ public class FirstInputs extends JPanel {
         add(jButton);
 
 
+
         jButton.addActionListener(e -> {
             setNumOfPlayers(Integer.parseInt(G1.getSelection().getActionCommand()));
             setLevelOfDifficulty(G2.getSelection().getActionCommand());
