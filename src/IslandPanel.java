@@ -1,6 +1,7 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -11,6 +12,7 @@ public class IslandPanel extends JPanel {
     private BufferedImage one, two, three, four, fifth, sixth, seventh, eighth, ninth, tenth, eleventh, twelvth, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty, twentyone, twentytwo, twentythree, twentyfour;
     private ArrayList<BufferedImage> Islands = new <BufferedImage>ArrayList();
     private BufferedImage Lion, goblet, crystal, fire, water, red;
+
 
     public IslandPanel() {
         try {
@@ -52,6 +54,7 @@ public class IslandPanel extends JPanel {
         } catch (Exception e) {
             System.out.println("Exception error");
         }
+
     }
 
     public void fillArray() {
@@ -99,7 +102,10 @@ public class IslandPanel extends JPanel {
         g.drawImage(water, 1150, 30, 150, 450, null);
 
         //treasures
-        g.drawImage(goblet, 1050, 80, 90, 90, null);
+        g.drawImage(goblet, 970, 150, 90, 90, null);
+        g.drawImage(crystal, 970, 600, 90, 90, null);
+        g.drawImage(fire, 430, 600, 90, 90, null);
+        g.drawImage(Lion, 430, 150, 90, 90, null);
 
 
 
@@ -212,8 +218,60 @@ public class IslandPanel extends JPanel {
 
         //if(stuff.getLevelOfDifficulty() == "Legendary")
 
+        //BUTTONS
+        g.drawRect(450, 20, 80, 25);
+        g.setColor(Color.GRAY);
+        g.fillRect(450, 20, 80, 25);
+        g.setColor(Color.WHITE);
+        g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+        g.drawString("Shore Up", 470, 33);
+
+        g.drawRect(550, 20, 80, 25);
+        g.setColor(Color.GRAY);
+        g.fillRect(550, 20, 80, 25);
+        g.setColor(Color.WHITE);
+        g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+        g.drawString("Get Treasure", 555, 33);
+
+        g.drawRect(650, 20, 80, 25);
+        g.setColor(Color.GRAY);
+        g.fillRect(650, 20, 80, 25);
+        g.setColor(Color.WHITE);
+        g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+        g.drawString("Capture", 670, 33);
+
+        g.drawRect(750, 20, 80, 25);
+        g.setColor(Color.GRAY);
+        g.fillRect(750, 20, 80, 25);
+        g.setColor(Color.WHITE);
+        g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+        g.drawString("Give card", 770, 33);
+
+        g.drawRect(850, 20, 80, 25);
+        g.setColor(Color.GRAY);
+        g.fillRect(850, 20, 80, 25);
+        g.setColor(Color.WHITE);
+        g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+        g.drawString("Use Sandbag", 855, 33);
+
+        g.drawRect(950, 20, 80, 25);
+        g.setColor(Color.GRAY);
+        g.fillRect(950, 20, 80, 25);
+        g.setColor(Color.WHITE);
+        g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+        g.drawString("Use Helicopter", 955, 33);
+
+
+
+
+
+
+
+
 
 
     }
+
+
     }
 

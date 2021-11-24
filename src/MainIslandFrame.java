@@ -1,8 +1,13 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemListener;
 
 public class MainIslandFrame extends JFrame {
     int WIDTH = 1920;
     int HEIGHT = 1080;
+
+
 
     public MainIslandFrame(String framename) {
         super(framename);
@@ -11,7 +16,14 @@ public class MainIslandFrame extends JFrame {
         setResizable(false);
         setVisible(true);
         add(new IslandPanel());
+
+
     }
+
+
+
+
+
 }
 
 
