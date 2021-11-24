@@ -2,11 +2,13 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.util.*;
 
 
-public class IslandPanel extends JPanel {
+public class IslandPanel extends JPanel implements MouseListener {
     private BufferedImage one, two, three, four, fifth, sixth, seventh, eighth, ninth, tenth, eleventh, twelvth, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty, twentyone, twentytwo, twentythree, twentyfour;
     private ArrayList<BufferedImage> Islands = new <BufferedImage>ArrayList();
     private BufferedImage Lion, goblet, crystal, fire, water, red;
@@ -14,6 +16,7 @@ public class IslandPanel extends JPanel {
 
 
     public IslandPanel() {
+        addMouseListener(this);
         try {
             Lion = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/lion.png")));
             goblet = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/GobletOfWater.png")));
@@ -277,6 +280,33 @@ public class IslandPanel extends JPanel {
 
 
     }
+        public void mouseClicked(MouseEvent e) {
+        int x = e.getX();
+        int y = e.getY();
+            if (x > 50 && x < 120 && y > 180 && y < 200) {
+                System.out.println("moving");
+            }
+            if (x > 180 && x < 250 && y > 180 && y < 200){
+                System.out.println("shoring up");
+            }
+            if (x > 50 && x < 120 && y > 210 && y < 230){
+                System.out.println("Giving Card");
+            }
+            if (x > 180 && x < 250 && y > 210 && y < 230){
+                System.out.println("Using card");
+            }
+            if (x > 50 && x < 120 && y > 240 && y < 260){
+                System.out.println("Capturing card");
+            }
+            if (x > 180 && x < 250 && y > 240 && y < 260){
+                System.out.println("Ending turn");
+            }
+        }
+
+    public void mousePressed(MouseEvent e) {}
+    public void mouseReleased(MouseEvent e) {}
+    public void mouseEntered(MouseEvent e) {}
+    public void mouseExited(MouseEvent e) {}
 
 
     }
