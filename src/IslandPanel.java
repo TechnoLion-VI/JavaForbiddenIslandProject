@@ -73,7 +73,7 @@ public class IslandPanel extends JPanel {
         validate();
 
         JPanel panel3 = new JPanel();
-        panel3.setBounds(650, 20, 85, 35);
+        panel3.setBounds(660, 20, 85, 35);
         add(panel3);
         JButton captureButton = new JButton("Capture");
         captureButton.setSize(80, 25);
@@ -82,7 +82,7 @@ public class IslandPanel extends JPanel {
         validate();
 
         JPanel panel4 = new JPanel();
-        panel4.setBounds(750, 20, 90, 35);
+        panel4.setBounds(755, 20, 90, 35);
         add(panel4);
         JButton giveButton = new JButton("Give Card");
         giveButton.setSize(80, 25);
@@ -91,7 +91,7 @@ public class IslandPanel extends JPanel {
         validate();
 
         JPanel panel5 = new JPanel();
-        panel5.setBounds(850, 20, 100, 35);
+        panel5.setBounds(855, 20, 100, 35);
         add(panel5);
         JButton sandbagButton = new JButton("Use Sandbag");
         sandbagButton.setSize(80, 25);
@@ -100,7 +100,7 @@ public class IslandPanel extends JPanel {
         validate();
 
         JPanel panel6 = new JPanel();
-        panel6.setBounds(950, 20, 105, 35);
+        panel6.setBounds(965, 20, 105, 35);
         add(panel6);
         JButton helicopterButton = new JButton("Use Helicopter");
         helicopterButton.setSize(80, 25);
