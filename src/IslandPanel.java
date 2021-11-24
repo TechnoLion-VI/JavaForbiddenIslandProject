@@ -98,6 +98,10 @@ public class IslandPanel extends JPanel {
 
         g.drawImage(water, 1150, 30, 150, 450, null);
 
+        //treasures
+        g.drawImage(goblet, 1050, 80, 90, 90, null);
+
+
 
 
 
@@ -120,6 +124,17 @@ public class IslandPanel extends JPanel {
             g.setColor(Color.RED);
             g.fillPolygon(new int[] {1130, 1130, 1165}, new int[] {370, 420, 395}, 3);
         }
+        else if(FirstInputs.levelOfDifficulty.equals("Elite")) {
+            g.drawPolygon(new int[] {1130, 1130, 1165}, new int[] {298, 348, 323}, 3);
+            g.setColor(Color.RED);
+            g.fillPolygon(new int[] {1130, 1130, 1165}, new int[] {298, 348, 323}, 3);
+        }
+        else {
+            g.drawPolygon(new int[] {1130, 1130, 1165}, new int[] {262, 312, 287}, 3);
+            g.setColor(Color.RED);
+            g.fillPolygon(new int[] {1130, 1130, 1165}, new int[] {262, 312, 287}, 3);
+        }
+
 
         for (int i = 0; i < 2; i++) {
             int j;
