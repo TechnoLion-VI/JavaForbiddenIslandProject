@@ -1,22 +1,19 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Objects;
 
 
-public class IslandPanel extends JPanel implements MouseListener {
+public class IslandPanel extends JPanel {
     private BufferedImage one, two, three, four, fifth, sixth, seventh, eighth, ninth, tenth, eleventh, twelvth, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty, twentyone, twentytwo, twentythree, twentyfour;
     private ArrayList<BufferedImage> Islands = new <BufferedImage>ArrayList();
     private BufferedImage Lion, goblet, crystal, fire, water, red;
-    private JButton move;
 
 
     public IslandPanel() {
-        addMouseListener(this);
         try {
             Lion = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/lion.png")));
             goblet = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/GobletOfWater.png")));
@@ -52,10 +49,66 @@ public class IslandPanel extends JPanel implements MouseListener {
             twentyfour = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Whispering Garden@2x.png")));
 
 
-
         } catch (Exception e) {
             System.out.println("Exception error");
         }
+        setLayout(null);
+
+        JPanel panel1 = new JPanel();
+        panel1.setBounds(450, 20, 90, 35);
+        add(panel1);
+        JButton shoreButton = new JButton("Shore Up");
+        shoreButton.setSize(80, 25);
+        shoreButton.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+        panel1.add(shoreButton);
+        validate();
+
+        JPanel panel2 = new JPanel();
+        panel2.setBounds(550, 20, 100, 35);
+        add(panel2);
+        JButton treasureButton = new JButton("Get Treasure");
+        treasureButton.setSize(80, 25);
+        treasureButton.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+        panel2.add(treasureButton);
+        validate();
+
+        JPanel panel3 = new JPanel();
+        panel3.setBounds(660, 20, 85, 35);
+        add(panel3);
+        JButton captureButton = new JButton("Capture");
+        captureButton.setSize(80, 25);
+        captureButton.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+        panel3.add(captureButton);
+        validate();
+
+        JPanel panel4 = new JPanel();
+        panel4.setBounds(755, 20, 90, 35);
+        add(panel4);
+        JButton giveButton = new JButton("Give Card");
+        giveButton.setSize(80, 25);
+        giveButton.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+        panel4.add(giveButton);
+        validate();
+
+        JPanel panel5 = new JPanel();
+        panel5.setBounds(855, 20, 100, 35);
+        add(panel5);
+        JButton sandbagButton = new JButton("Use Sandbag");
+        sandbagButton.setSize(80, 25);
+        sandbagButton.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+        panel5.add(sandbagButton);
+        validate();
+
+        JPanel panel6 = new JPanel();
+        panel6.setBounds(965, 20, 105, 35);
+        add(panel6);
+        JButton helicopterButton = new JButton("Use Helicopter");
+        helicopterButton.setSize(80, 25);
+        helicopterButton.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+        panel6.add(helicopterButton);
+        validate();
+
+
 
     }
 
@@ -87,6 +140,7 @@ public class IslandPanel extends JPanel implements MouseListener {
     }
 
     public void paint(Graphics g) {
+        super.paint(g);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         double width = screenSize.getWidth();
         double height = screenSize.getHeight();
@@ -110,10 +164,6 @@ public class IslandPanel extends JPanel implements MouseListener {
         g.drawImage(Lion, 430, 150, 90, 90, null);
 
 
-
-
-
-
         //g.drawPolygon(new int[] {100, 100, 200}, new int[] {100, 300, 200}, 3);
         //g.setColor(Color.RED);
         //g.fillPolygon(new int[]{100, 100, 200}, new int[]{100, 300, 200}, 3);
@@ -122,25 +172,22 @@ public class IslandPanel extends JPanel implements MouseListener {
         System.out.println(Islands.size());
 
         System.out.println(FirstInputs.levelOfDifficulty);
-        if(FirstInputs.levelOfDifficulty.equals("Normal")) {
-            g.drawPolygon(new int[] {1130, 1130, 1165}, new int[] {334, 384, 359}, 3);
+        if (FirstInputs.levelOfDifficulty.equals("Normal")) {
+            g.drawPolygon(new int[]{1130, 1130, 1165}, new int[]{334, 384, 359}, 3);
             g.setColor(Color.RED);
-            g.fillPolygon(new int[] {1130, 1130, 1165}, new int[] {334, 384, 359}, 3);
-        }
-        else if(FirstInputs.levelOfDifficulty.equals("Novice")) {
-            g.drawPolygon(new int[] {1130, 1130, 1165}, new int[] {370, 420, 395}, 3);
+            g.fillPolygon(new int[]{1130, 1130, 1165}, new int[]{334, 384, 359}, 3);
+        } else if (FirstInputs.levelOfDifficulty.equals("Novice")) {
+            g.drawPolygon(new int[]{1130, 1130, 1165}, new int[]{370, 420, 395}, 3);
             g.setColor(Color.RED);
-            g.fillPolygon(new int[] {1130, 1130, 1165}, new int[] {370, 420, 395}, 3);
-        }
-        else if(FirstInputs.levelOfDifficulty.equals("Elite")) {
-            g.drawPolygon(new int[] {1130, 1130, 1165}, new int[] {298, 348, 323}, 3);
+            g.fillPolygon(new int[]{1130, 1130, 1165}, new int[]{370, 420, 395}, 3);
+        } else if (FirstInputs.levelOfDifficulty.equals("Elite")) {
+            g.drawPolygon(new int[]{1130, 1130, 1165}, new int[]{298, 348, 323}, 3);
             g.setColor(Color.RED);
-            g.fillPolygon(new int[] {1130, 1130, 1165}, new int[] {298, 348, 323}, 3);
-        }
-        else {
-            g.drawPolygon(new int[] {1130, 1130, 1165}, new int[] {262, 312, 287}, 3);
+            g.fillPolygon(new int[]{1130, 1130, 1165}, new int[]{298, 348, 323}, 3);
+        } else {
+            g.drawPolygon(new int[]{1130, 1130, 1165}, new int[]{262, 312, 287}, 3);
             g.setColor(Color.RED);
-            g.fillPolygon(new int[] {1130, 1130, 1165}, new int[] {262, 312, 287}, 3);
+            g.fillPolygon(new int[]{1130, 1130, 1165}, new int[]{262, 312, 287}, 3);
         }
 
 
@@ -148,72 +195,72 @@ public class IslandPanel extends JPanel implements MouseListener {
             int j;
             g.drawImage(Islands.get(j = (int) (Math.random() * Islands.size())), x, y, 100, 100, null);
             Islands.remove(j);
-            x=x+100;
+            x = x + 100;
             Collections.shuffle(Islands);
 
         }
 
-        for(int j = 1; j < 5; j++) {
+        for (int j = 1; j < 5; j++) {
             int h;
             g.drawImage(Islands.get(h = (int) (Math.random() * Islands.size())), x2, y2, 100, 100, null);
             Islands.remove(h);
-            x2 = x2+100;
+            x2 = x2 + 100;
             Collections.shuffle(Islands);
         }
 
-        x2=550;
+        x2 = 550;
 //
-        for(int k = 1; k<5; k++) {
+        for (int k = 1; k < 5; k++) {
             int f;
-            g.drawImage(Islands.get(f = (int) (Math.random() * Islands.size())), x2, y2+100, 100, 100, null);
+            g.drawImage(Islands.get(f = (int) (Math.random() * Islands.size())), x2, y2 + 100, 100, 100, null);
             Islands.remove(f);
-            x2 = x2+100;
+            x2 = x2 + 100;
             Collections.shuffle(Islands);
         }
 
-        x2=550;
+        x2 = 550;
 
-        for(int k = 1; k<5; k++) {
+        for (int k = 1; k < 5; k++) {
             int e;
-            g.drawImage(Islands.get(e = (int) (Math.random() * Islands.size())), x2, y2+200, 100, 100, null);
+            g.drawImage(Islands.get(e = (int) (Math.random() * Islands.size())), x2, y2 + 200, 100, 100, null);
             Islands.remove(e);
-            x2 = x2+100;
+            x2 = x2 + 100;
             Collections.shuffle(Islands);
         }
 
-        x2=550;
+        x2 = 550;
 
-        for(int k = 1; k<5; k++) {
+        for (int k = 1; k < 5; k++) {
             int d;
-            g.drawImage(Islands.get(d = (int) (Math.random() * Islands.size())), x2, y2+300, 100, 100, null);
+            g.drawImage(Islands.get(d = (int) (Math.random() * Islands.size())), x2, y2 + 300, 100, 100, null);
             Islands.remove(d);
-            x2 = x2+100;
+            x2 = x2 + 100;
             Collections.shuffle(Islands);
         }
 
-        for(int u = 0; u < 2; u++) {
+        for (int u = 0; u < 2; u++) {
             int c;
-            g.drawImage(Islands.get(c = (int) (Math.random() * Islands.size())), x-200, y2+400, 100, 100, null);
+            g.drawImage(Islands.get(c = (int) (Math.random() * Islands.size())), x - 200, y2 + 400, 100, 100, null);
             Islands.remove(c);
-            x=x+100;
+            x = x + 100;
             Collections.shuffle(Islands);
         }
 
-        y2=200;
+        y2 = 200;
 
-        for(int r = 0; r < 2; r++) {
+        for (int r = 0; r < 2; r++) {
             int b;
-            g.drawImage(Islands.get(b = (int) (Math.random() * Islands.size())), x2, y2+100, 100, 100, null);
+            g.drawImage(Islands.get(b = (int) (Math.random() * Islands.size())), x2, y2 + 100, 100, 100, null);
             Islands.remove(b);
-            y2=y2+100;
+            y2 = y2 + 100;
             Collections.shuffle(Islands);
         }
 
-        for(int l = 0; l <2; l++) {
+        for (int l = 0; l < 2; l++) {
             int a;
             g.drawImage(Islands.get(a = (int) (Math.random() * Islands.size())), x3, y3, 100, 100, null);
             Islands.remove(a);
-            y3=y3+100;
+            y3 = y3 + 100;
             Collections.shuffle(Islands);
         }
         //FirstInputs stuff = new FirstInputs();
@@ -221,93 +268,50 @@ public class IslandPanel extends JPanel implements MouseListener {
         //if(stuff.getLevelOfDifficulty() == "Legendary")
 
         //BUTTONS
-        g.drawRoundRect(50, 20, 200, 50, 10, 10);
-        g.setColor(Color.YELLOW);
-        g.fillRoundRect(50, 20, 200, 50, 10, 10);
-        g.setColor(Color.BLACK);
-        g.setFont(new Font (Font.SANS_SERIF, Font.BOLD, 30));
-        g.drawString("Player 1", 90, 50);
 
-        g.drawRect(50, 180, 70, 20);
-        g.setColor(Color.GRAY);
-        g.fillRect(50, 180, 70, 20);
-        g.setColor(Color.WHITE);
-        g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
-        g.drawString("Move", 70, 195);
-
-        g.drawRect(180, 180, 70, 20);
-        g.setColor(Color.GRAY);
-        g.fillRect(180, 180, 70, 20);
-        g.setColor(Color.WHITE);
-        g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
-        g.drawString("Shore Up", 190, 195);
-
-        g.drawRect(50, 210, 70, 20);
-        g.setColor(Color.GRAY);
-        g.fillRect(50, 210, 70, 20);
-        g.setColor(Color.WHITE);
-        g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
-        g.drawString("Give Card", 60, 225);
-
-        g.drawRect(180, 210, 70, 20);
-        g.setColor(Color.GRAY);
-        g.fillRect(180, 210, 70, 20);
-        g.setColor(Color.WHITE);
-        g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
-        g.drawString("Use Card", 190, 225);
-
-        g.drawRect(50, 240, 70, 20);
-        g.setColor(Color.GRAY);
-        g.fillRect(50, 240, 70, 20);
-        g.setColor(Color.WHITE);
-        g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
-        g.drawString("Capture Card", 52, 255);
-
-        g.drawRect(180, 240, 70, 20);
-        g.setColor(Color.GRAY);
-        g.fillRect(180, 240, 70, 20);
-        g.setColor(Color.WHITE);
-        g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
-        g.drawString("End Turn", 190, 255);
-
-
-
-
-
-
-
-
-
-
+//        g.drawRect(450, 20, 80, 25);
+//        g.setColor(Color.GRAY);
+//        g.fillRect(450, 20, 80, 25);
+//        g.setColor(Color.WHITE);
+//        g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+//        g.drawString("Shore Up", 470, 33);
+//
+//        g.drawRect(550, 20, 80, 25);
+//        g.setColor(Color.GRAY);
+//        g.fillRect(550, 20, 80, 25);
+//        g.setColor(Color.WHITE);
+//        g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+//        g.drawString("Get Treasure", 555, 33);
+//
+//        g.drawRect(650, 20, 80, 25);
+//        g.setColor(Color.GRAY);
+//        g.fillRect(650, 20, 80, 25);
+//        g.setColor(Color.WHITE);
+//        g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+//        g.drawString("Capture", 670, 33);
+//
+//        g.drawRect(750, 20, 80, 25);
+//        g.setColor(Color.GRAY);
+//        g.fillRect(750, 20, 80, 25);
+//        g.setColor(Color.WHITE);
+//        g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+//        g.drawString("Give card", 770, 33);
+//
+//        g.drawRect(850, 20, 80, 25);
+//        g.setColor(Color.GRAY);
+//        g.fillRect(850, 20, 80, 25);
+//        g.setColor(Color.WHITE);
+//        g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+//        g.drawString("Use Sandbag", 855, 33);
+//
+//        g.drawRect(950, 20, 80, 25);
+//        g.setColor(Color.GRAY);
+//        g.fillRect(950, 20, 80, 25);
+//        g.setColor(Color.WHITE);
+//        g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+//        g.drawString("Use Helicopter", 955, 33);
     }
-        public void mouseClicked(MouseEvent e) {
-        int x = e.getX();
-        int y = e.getY();
-            if (x > 50 && x < 120 && y > 180 && y < 200) {
-                System.out.println("moving");
-            }
-            if (x > 180 && x < 250 && y > 180 && y < 200){
-                System.out.println("shoring up");
-            }
-            if (x > 50 && x < 120 && y > 210 && y < 230){
-                System.out.println("Giving Card");
-            }
-            if (x > 180 && x < 250 && y > 210 && y < 230){
-                System.out.println("Using card");
-            }
-            if (x > 50 && x < 120 && y > 240 && y < 260){
-                System.out.println("Capturing card");
-            }
-            if (x > 180 && x < 250 && y > 240 && y < 260){
-                System.out.println("Ending turn");
-            }
-        }
-
-    public void mousePressed(MouseEvent e) {}
-    public void mouseReleased(MouseEvent e) {}
-    public void mouseEntered(MouseEvent e) {}
-    public void mouseExited(MouseEvent e) {}
 
 
-    }
+}
 
