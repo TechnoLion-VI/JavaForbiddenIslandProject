@@ -144,24 +144,24 @@ public class IslandPanel extends JPanel {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         double width = screenSize.getWidth();
         double height = screenSize.getHeight();
-        int x = 650;
+        int x = 890;
         int y = 100;
-        int x2 = 550;
+        int x2 = 790;
         int y2 = 200;
-        int x3 = 450;
+        int x3 = 690;
         int y3 = 300;
         fillArray();
 
         FirstInputs stuff = new FirstInputs();
 
 
-        g.drawImage(water, 1150, 30, 150, 450, null);
+        g.drawImage(water, 1350, 30, 150, 450, null);
 
         //treasures
-        g.drawImage(goblet, 970, 150, 90, 90, null);
-        g.drawImage(crystal, 970, 600, 90, 90, null);
-        g.drawImage(fire, 430, 600, 90, 90, null);
-        g.drawImage(Lion, 430, 150, 90, 90, null);
+        g.drawImage(goblet, 1230, 150, 90, 90, null);
+        g.drawImage(crystal, 1230, 600, 90, 90, null);
+        g.drawImage(fire, 690, 600, 90, 90, null);
+        g.drawImage(Lion, 690, 150, 90, 90, null);
 
 
         //g.drawPolygon(new int[] {100, 100, 200}, new int[] {100, 300, 200}, 3);
@@ -173,21 +173,21 @@ public class IslandPanel extends JPanel {
 
         System.out.println(FirstInputs.levelOfDifficulty);
         if (FirstInputs.levelOfDifficulty.equals("Normal")) {
-            g.drawPolygon(new int[]{1130, 1130, 1165}, new int[]{334, 384, 359}, 3);
+            g.drawPolygon(new int[]{1330, 1330, 1365}, new int[]{334, 384, 359}, 3);
             g.setColor(Color.RED);
-            g.fillPolygon(new int[]{1130, 1130, 1165}, new int[]{334, 384, 359}, 3);
+            g.fillPolygon(new int[]{1330, 1330, 1365}, new int[]{334, 384, 359}, 3);
         } else if (FirstInputs.levelOfDifficulty.equals("Novice")) {
-            g.drawPolygon(new int[]{1130, 1130, 1165}, new int[]{370, 420, 395}, 3);
+            g.drawPolygon(new int[]{1330, 1330, 1365}, new int[]{370, 420, 395}, 3);
             g.setColor(Color.RED);
-            g.fillPolygon(new int[]{1130, 1130, 1165}, new int[]{370, 420, 395}, 3);
+            g.fillPolygon(new int[]{1330, 1330, 1365}, new int[]{370, 420, 395}, 3);
         } else if (FirstInputs.levelOfDifficulty.equals("Elite")) {
-            g.drawPolygon(new int[]{1130, 1130, 1165}, new int[]{298, 348, 323}, 3);
+            g.drawPolygon(new int[]{1330, 1330, 1365}, new int[]{298, 348, 323}, 3);
             g.setColor(Color.RED);
-            g.fillPolygon(new int[]{1130, 1130, 1165}, new int[]{298, 348, 323}, 3);
+            g.fillPolygon(new int[]{1330, 1330, 1365}, new int[]{298, 348, 323}, 3);
         } else {
-            g.drawPolygon(new int[]{1130, 1130, 1165}, new int[]{262, 312, 287}, 3);
+            g.drawPolygon(new int[]{1330, 1330, 1365}, new int[]{262, 312, 287}, 3);
             g.setColor(Color.RED);
-            g.fillPolygon(new int[]{1130, 1130, 1165}, new int[]{262, 312, 287}, 3);
+            g.fillPolygon(new int[]{1330, 1330, 1365}, new int[]{262, 312, 287}, 3);
         }
 
 
@@ -208,7 +208,7 @@ public class IslandPanel extends JPanel {
             Collections.shuffle(Islands);
         }
 
-        x2 = 550;
+        x2 = 790;
 //
         for (int k = 1; k < 5; k++) {
             int f;
@@ -218,7 +218,7 @@ public class IslandPanel extends JPanel {
             Collections.shuffle(Islands);
         }
 
-        x2 = 550;
+        x2 = 790;
 
         for (int k = 1; k < 5; k++) {
             int e;
@@ -228,7 +228,7 @@ public class IslandPanel extends JPanel {
             Collections.shuffle(Islands);
         }
 
-        x2 = 550;
+        x2 = 790;
 
         for (int k = 1; k < 5; k++) {
             int d;
