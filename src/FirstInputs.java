@@ -15,10 +15,10 @@ public class FirstInputs extends JPanel {
     private JLabel L1, L2;
     public static int numberOfPlayers;
     public static String levelOfDifficulty;
-    private Frame frame;
+    private JFrame frame;
+    IslandFrame frame2;
 
     public FirstInputs() {
-
         L1 = new JLabel("Pick Number Of Players: ");
         G1 = new ButtonGroup();
         jRadioButton1 = new JRadioButton();
@@ -73,8 +73,9 @@ public class FirstInputs extends JPanel {
             setLevelOfDifficulty(G2.getSelection().getActionCommand());
             System.out.println(numberOfPlayers);
             System.out.println(levelOfDifficulty);
-            frame = new MainIslandFrame("Forbidden Island");
-            setVisible(false);
+            frame2 = new IslandFrame("Forbidden Island");
+            try{frame.setVisible(false);
+            } catch(Exception a){}
         });
     }
 

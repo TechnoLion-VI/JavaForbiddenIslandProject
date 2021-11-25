@@ -9,7 +9,7 @@ import java.util.Objects;
 public class IslandInputPanel extends JPanel implements MouseListener{
     private BufferedImage FirstScreen, HelpButton;
     private JFrame frame;
-    IslandFrame frame2;
+    inputframe frame2;
     HelpFrame frame3;
 
     public IslandInputPanel(JFrame frame) {
@@ -33,18 +33,14 @@ public class IslandInputPanel extends JPanel implements MouseListener{
         int x = e.getX();
         int y = e.getY();
         if (x > 142 && x < 317 && y > 333 && y < 402) {
-               frame2= new IslandFrame("User Input");
+               frame2= new inputframe("User Input69420");
                this.frame.setVisible(false);
-               frame2.add(new FirstInputs());
-               frame2.repaint();
-               frame2.revalidate();
         }
         if (x > 142 && x < 317 && y > 420 && y < 489)
             System.exit(0);
         if (x > 0 && x < 45 && y > 0 && y < 45) {
             frame3 = new HelpFrame("Help");
         }
-        repaint();
     }
 
     public void mousePressed(MouseEvent e) {}
