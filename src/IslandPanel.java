@@ -398,6 +398,12 @@ public class IslandPanel extends JPanel {
 //        g.drawString("Use Helicopter", 955, 33);
     }
 
+    public void updateBoard(ArrayList<IslandTile> arr) {
+        for(IslandTile i : arr) {
+
+        }
+    }
+
 
 }
 
