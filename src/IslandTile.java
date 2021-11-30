@@ -10,7 +10,7 @@ public class IslandTile {
     private ArrayList<BufferedImage> arr;
     private ArrayList<Player> players;
 
-    public IslandTile(int x, int y, String treasure, String name) {
+    public IslandTile(int x, int y, String treasure, String name, BufferedImage norm) {
 
     }
 

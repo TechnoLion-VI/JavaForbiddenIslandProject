@@ -12,6 +12,35 @@ public class IslandPanel extends JPanel {
     private ArrayList<BufferedImage> Islands = new <BufferedImage>ArrayList();
     private BufferedImage Lion, goblet, crystal, fire, water, red, pressed;
 
+    public BufferedImage getImage(int i) {
+        ArrayList<BufferedImage> arr = new <BufferedImage>ArrayList();
+        arr.add(one);
+        arr.add(two);
+        arr.add(three);
+        arr.add(four);
+        arr.add(fifth);
+        arr.add(sixth);
+        arr.add(seventh);
+        arr.add(eighth);
+        arr.add(ninth);
+        arr.add(tenth);
+        arr.add(eleventh);
+        arr.add(twelvth);
+        arr.add(thirteen);
+        arr.add(fourteen);
+        arr.add(fifteen);
+        arr.add(sixteen);
+        arr.add(seventeen);
+        arr.add(eighteen);
+        arr.add(nineteen);
+        arr.add(twenty);
+        arr.add(twentyone);
+        arr.add(twentytwo);
+        arr.add(twentythree);
+        arr.add(twentyfour);
+        return arr.get(i);
+    }
+
 
     public IslandPanel() {
         try {
