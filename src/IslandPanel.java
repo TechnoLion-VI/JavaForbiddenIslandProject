@@ -10,7 +10,44 @@ import java.util.Objects;
 public class IslandPanel extends JPanel {
     private BufferedImage one, two, three, four, fifth, sixth, seventh, eighth, ninth, tenth, eleventh, twelvth, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty, twentyone, twentytwo, twentythree, twentyfour;
     private ArrayList<BufferedImage> Islands = new <BufferedImage>ArrayList();
-    private BufferedImage Lion, goblet, crystal, fire, water, red;
+    private BufferedImage Lion, goblet, crystal, fire, water, red, pressed;
+    Player p1 = new Player();
+    Player p2 = new Player();
+    Player p3 = new Player();
+    Player p4 = new Player();
+    String p1Role;
+    String p2Role;
+    String p3Role;
+    String p4Role;
+
+    public BufferedImage getImage(int i) {
+        ArrayList<BufferedImage> arr = new <BufferedImage>ArrayList();
+        arr.add(one);
+        arr.add(two);
+        arr.add(three);
+        arr.add(four);
+        arr.add(fifth);
+        arr.add(sixth);
+        arr.add(seventh);
+        arr.add(eighth);
+        arr.add(ninth);
+        arr.add(tenth);
+        arr.add(eleventh);
+        arr.add(twelvth);
+        arr.add(thirteen);
+        arr.add(fourteen);
+        arr.add(fifteen);
+        arr.add(sixteen);
+        arr.add(seventeen);
+        arr.add(eighteen);
+        arr.add(nineteen);
+        arr.add(twenty);
+        arr.add(twentyone);
+        arr.add(twentytwo);
+        arr.add(twentythree);
+        arr.add(twentyfour);
+        return arr.get(i);
+    }
 
 
     public IslandPanel() {
@@ -21,6 +58,7 @@ public class IslandPanel extends JPanel {
             fire = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Fire.png")));
             water = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/WaterLevel.JPG")));
             red = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/TickMark.jpg")));
+            pressed = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Card_Pressed@2x.png")));
 
 
             one = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Breakers Bridge@2x.png")));
@@ -263,8 +301,95 @@ public class IslandPanel extends JPanel {
             y3 = y3 + 100;
             Collections.shuffle(Islands);
         }
-        //FirstInputs stuff = new FirstInputs();
+        g.setColor(Color.WHITE);
+        g.setFont(new Font(Font.SERIF, Font.BOLD, 15));
 
+        //seperate
+        g.drawLine(400, 0, 400, 1080);
+
+        if(FirstInputs.numberOfPlayers == 2) {
+
+            g.drawString("Player 1 " + (p1Role = p1.getPlayerRoles()), 50, 80);
+            g.drawString("Player 2 " + (p2Role = p2.getPlayerRoles()), 50, 260);
+
+            //PLAYER 1
+            g.drawImage(pressed, 48, 85, 70, 105, null);
+            g.drawImage(pressed, 118, 85, 70, 105, null);
+            g.drawImage(pressed, 188, 85, 70, 105, null);
+            g.drawImage(pressed, 258, 85, 70, 105, null);
+            g.drawImage(pressed, 328, 85, 70, 105, null);
+
+            //PLAYER 2
+            g.drawImage(pressed, 48, 265, 70, 105, null);
+            g.drawImage(pressed, 118, 265, 70, 105, null);
+            g.drawImage(pressed, 188, 265, 70, 105, null);
+            g.drawImage(pressed, 258, 265, 70, 105, null);
+            g.drawImage(pressed, 328, 265, 70, 105, null);
+        }
+        else if(FirstInputs.numberOfPlayers == 3) {
+            g.drawString("Player 1 " + p1.getPlayerRoles(), 50, 80);
+            g.drawString("Player 2 " + p2.getPlayerRoles(), 50, 260);
+            g.drawString("Player 3 " + p3.getPlayerRoles(), 50, 440);
+
+            //PLAYER 1
+            g.drawImage(pressed, 48, 85, 70, 105, null);
+            g.drawImage(pressed, 118, 85, 70, 105, null);
+            g.drawImage(pressed, 188, 85, 70, 105, null);
+            g.drawImage(pressed, 258, 85, 70, 105, null);
+            g.drawImage(pressed, 328, 85, 70, 105, null);
+
+            //PLAYER 2
+            g.drawImage(pressed, 48, 265, 70, 105, null);
+            g.drawImage(pressed, 118, 265, 70, 105, null);
+            g.drawImage(pressed, 188, 265, 70, 105, null);
+            g.drawImage(pressed, 258, 265, 70, 105, null);
+            g.drawImage(pressed, 328, 265, 70, 105, null);
+
+            //PLAYER 3
+            g.drawImage(pressed, 48, 445, 70, 105, null);
+            g.drawImage(pressed, 118, 445, 70, 105, null);
+            g.drawImage(pressed, 188, 445, 70, 105, null);
+            g.drawImage(pressed, 258, 445, 70, 105, null);
+            g.drawImage(pressed, 328, 445, 70, 105, null);
+
+        }
+        else {
+            g.drawString("Player 1 " + p1.getPlayerRoles(), 50, 80);
+            g.drawString("Player 2 " + p2.getPlayerRoles(), 50, 260);
+            g.drawString("Player 3 " + p3.getPlayerRoles(), 50, 440);
+            g.drawString("Player 4 " + p4.getPlayerRoles(), 50, 620);
+            //PLAYER 1
+            g.drawImage(pressed, 48, 85, 70, 105, null);
+            g.drawImage(pressed, 118, 85, 70, 105, null);
+            g.drawImage(pressed, 188, 85, 70, 105, null);
+            g.drawImage(pressed, 258, 85, 70, 105, null);
+            g.drawImage(pressed, 328, 85, 70, 105, null);
+
+            //PLAYER 2
+            g.drawImage(pressed, 48, 265, 70, 105, null);
+            g.drawImage(pressed, 118, 265, 70, 105, null);
+            g.drawImage(pressed, 188, 265, 70, 105, null);
+            g.drawImage(pressed, 258, 265, 70, 105, null);
+            g.drawImage(pressed, 328, 265, 70, 105, null);
+
+            //PLAYER 3
+            g.drawImage(pressed, 48, 445, 70, 105, null);
+            g.drawImage(pressed, 118, 445, 70, 105, null);
+            g.drawImage(pressed, 188, 445, 70, 105, null);
+            g.drawImage(pressed, 258, 445, 70, 105, null);
+            g.drawImage(pressed, 328, 445, 70, 105, null);
+
+            //PLAYER 4
+            g.drawImage(pressed, 48, 625, 70, 105, null);
+            g.drawImage(pressed, 118, 625, 70, 105, null);
+            g.drawImage(pressed, 188, 625, 70, 105, null);
+            g.drawImage(pressed, 258, 625, 70, 105, null);
+            g.drawImage(pressed, 328, 625, 70, 105, null);
+        }
+
+
+        //FirstInputs stuff = new FirstInputs();
+        //add 70 to x
         //if(stuff.getLevelOfDifficulty() == "Legendary")
 
         //BUTTONS
@@ -310,6 +435,12 @@ public class IslandPanel extends JPanel {
 //        g.setColor(Color.WHITE);
 //        g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
 //        g.drawString("Use Helicopter", 955, 33);
+    }
+
+    public void updateBoard(ArrayList<IslandTile> arr) {
+        for(IslandTile i : arr) {
+
+        }
     }
 
 

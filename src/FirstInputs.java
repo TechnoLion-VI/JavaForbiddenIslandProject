@@ -73,7 +73,10 @@ public class FirstInputs extends JPanel {
             setLevelOfDifficulty(G2.getSelection().getActionCommand());
             System.out.println(numberOfPlayers);
             System.out.println(levelOfDifficulty);
-            frame2 = new IslandFrame("Forbidden Island");
+
+
+
+            ForbiddenIsland game = new ForbiddenIsland(numberOfPlayers, levelOfDifficulty);
             try{frame.setVisible(false);
             } catch(Exception a){}
         });
