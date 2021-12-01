@@ -1,26 +1,18 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Stack;
 
 public class Player {
-    private String roles;
+    private String role;
     private IslandTile currTile;
 
-    public Player(){
-        ArrayList<String> playerRoles = new ArrayList<>();
-        playerRoles.add("Navigator");
-        playerRoles.add("Explorer");
-        playerRoles.add("Diver");
-        playerRoles.add("Messenger");
-        playerRoles.add("Pilot");
-        playerRoles.add("Engineer");
-        setPlayerRoles(playerRoles);
+    public Player(String x){
+        role = x;
+
     }
 
-    public void setPlayerRoles(ArrayList<String> playerRoles){
-        roles = playerRoles.get((int) (Math.random() * 4));
-    }
-
-    public String getPlayerRoles(){
-        return roles;
+    public String getRole(){
+        return role;
     }
 }

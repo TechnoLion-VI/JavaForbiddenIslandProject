@@ -11,10 +11,6 @@ public class IslandPanel extends JPanel {
     private BufferedImage one, two, three, four, fifth, sixth, seventh, eighth, ninth, tenth, eleventh, twelvth, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty, twentyone, twentytwo, twentythree, twentyfour;
     private ArrayList<BufferedImage> Islands = new <BufferedImage>ArrayList();
     private BufferedImage Lion, goblet, crystal, fire, water, red, pressed;
-    Player p1 = new Player();
-    Player p2 = new Player();
-    Player p3 = new Player();
-    Player p4 = new Player();
     String p1Role;
     String p2Role;
     String p3Role;
@@ -145,6 +141,9 @@ public class IslandPanel extends JPanel {
         helicopterButton.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
         panel6.add(helicopterButton);
         validate();
+
+
+        GameState gameState = new GameState(4);
 
 
 
@@ -309,8 +308,8 @@ public class IslandPanel extends JPanel {
 
         if(FirstInputs.numberOfPlayers == 2) {
 
-            g.drawString("Player 1 " + (p1Role = p1.getPlayerRoles()), 50, 80);
-            g.drawString("Player 2 " + (p2Role = p2.getPlayerRoles()), 50, 260);
+            g.drawString("Player 1 " + (p1Role = p1.getRole()), 50, 80);
+            g.drawString("Player 2 " + (p2Role = p2.getRole()), 50, 260);
 
             //PLAYER 1
             g.drawImage(pressed, 48, 85, 70, 105, null);
@@ -327,9 +326,9 @@ public class IslandPanel extends JPanel {
             g.drawImage(pressed, 328, 265, 70, 105, null);
         }
         else if(FirstInputs.numberOfPlayers == 3) {
-            g.drawString("Player 1 " + p1.getPlayerRoles(), 50, 80);
-            g.drawString("Player 2 " + p2.getPlayerRoles(), 50, 260);
-            g.drawString("Player 3 " + p3.getPlayerRoles(), 50, 440);
+            g.drawString("Player 1 " + p1.getRole(), 50, 80);
+            g.drawString("Player 2 " + p2.getRole(), 50, 260);
+            g.drawString("Player 3 " + p3.getRole(), 50, 440);
 
             //PLAYER 1
             g.drawImage(pressed, 48, 85, 70, 105, null);
@@ -354,10 +353,10 @@ public class IslandPanel extends JPanel {
 
         }
         else {
-            g.drawString("Player 1 " + p1.getPlayerRoles(), 50, 80);
-            g.drawString("Player 2 " + p2.getPlayerRoles(), 50, 260);
-            g.drawString("Player 3 " + p3.getPlayerRoles(), 50, 440);
-            g.drawString("Player 4 " + p4.getPlayerRoles(), 50, 620);
+            g.drawString("Player 1 " + p1.getRole(), 50, 80);
+            g.drawString("Player 2 " + p2.getRole(), 50, 260);
+            g.drawString("Player 3 " + p3.getRole(), 50, 440);
+            g.drawString("Player 4 " + p4.getRole(), 50, 620);
             //PLAYER 1
             g.drawImage(pressed, 48, 85, 70, 105, null);
             g.drawImage(pressed, 118, 85, 70, 105, null);
