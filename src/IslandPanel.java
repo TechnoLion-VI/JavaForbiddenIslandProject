@@ -11,6 +11,7 @@ public class IslandPanel extends JPanel {
     private BufferedImage one, two, three, four, fifth, sixth, seventh, eighth, ninth, tenth, eleventh, twelvth, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty, twentyone, twentytwo, twentythree, twentyfour;
     private ArrayList<BufferedImage> Islands = new <BufferedImage>ArrayList();
     private BufferedImage Lion, goblet, crystal, fire, water, red, pressed;
+    Player p1,p2,p3,p4;
     String p1Role;
     String p2Role;
     String p3Role;
@@ -47,6 +48,8 @@ public class IslandPanel extends JPanel {
 
 
     public IslandPanel() {
+        GameState gameState = new GameState(4);
+
         try {
             Lion = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/lion.png")));
             goblet = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/GobletOfWater.png")));
@@ -142,8 +145,10 @@ public class IslandPanel extends JPanel {
         panel6.add(helicopterButton);
         validate();
 
-
-        GameState gameState = new GameState(4);
+        try{p1 = GameState.allPlayers[0];} catch (ArrayIndexOutOfBoundsException ignored){}
+        try{p2 = GameState.allPlayers[1];} catch (ArrayIndexOutOfBoundsException ignored){}
+        try{p3 = GameState.allPlayers[2];} catch (ArrayIndexOutOfBoundsException ignored){}
+        try{p4 = GameState.allPlayers[3];} catch (ArrayIndexOutOfBoundsException ignored){}
 
 
 

@@ -2,8 +2,9 @@ import java.util.Collections;
 import java.util.Stack;
 
 public class GameState {
-    private Stack<String> playerRoles;
+    public static Stack<String> playerRoles;
     public static int numPlayers;
+    public static Player[] allPlayers;
 
     public GameState(int numPlayers){
         playerRoles = new Stack<>();
@@ -15,7 +16,7 @@ public class GameState {
         playerRoles.push("Engineer");
         Collections.shuffle(playerRoles);
 
-        Player[] allPlayers = new Player[numPlayers];
+        allPlayers = new Player[numPlayers];
         for(int i = 0; i < numPlayers; i++){
             allPlayers[i] = new Player(playerRoles.pop());
         }
