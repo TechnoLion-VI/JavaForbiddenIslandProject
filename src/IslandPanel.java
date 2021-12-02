@@ -363,32 +363,32 @@ public class IslandPanel extends JPanel {
             g.drawString("Player 3 " + p3.getRole(), 50, 440);
             g.drawString("Player 4 " + p4.getRole(), 50, 620);
             //PLAYER 1
-            g.drawImage(pressed, 48, 85, 70, 105, null);
-            g.drawImage(pressed, 118, 85, 70, 105, null);
-            g.drawImage(pressed, 188, 85, 70, 105, null);
-            g.drawImage(pressed, 258, 85, 70, 105, null);
-            g.drawImage(pressed, 328, 85, 70, 105, null);
+            g.drawImage(pressed, 25, 85, 70, 105, null);
+            g.drawImage(pressed, 95, 85, 70, 105, null);
+            g.drawImage(pressed, 165, 85, 70, 105, null);
+            g.drawImage(pressed, 235, 85, 70, 105, null);
+            g.drawImage(pressed, 305, 85, 70, 105, null);
 
             //PLAYER 2
-            g.drawImage(pressed, 48, 265, 70, 105, null);
-            g.drawImage(pressed, 118, 265, 70, 105, null);
-            g.drawImage(pressed, 188, 265, 70, 105, null);
-            g.drawImage(pressed, 258, 265, 70, 105, null);
-            g.drawImage(pressed, 328, 265, 70, 105, null);
+            g.drawImage(pressed, 25, 265, 70, 105, null);
+            g.drawImage(pressed, 95, 265, 70, 105, null);
+            g.drawImage(pressed, 165, 265, 70, 105, null);
+            g.drawImage(pressed, 235, 265, 70, 105, null);
+            g.drawImage(pressed, 305, 265, 70, 105, null);
 
             //PLAYER 3
-            g.drawImage(pressed, 48, 445, 70, 105, null);
-            g.drawImage(pressed, 118, 445, 70, 105, null);
-            g.drawImage(pressed, 188, 445, 70, 105, null);
-            g.drawImage(pressed, 258, 445, 70, 105, null);
-            g.drawImage(pressed, 328, 445, 70, 105, null);
+            g.drawImage(pressed, 25, 445, 70, 105, null);
+            g.drawImage(pressed, 95, 445, 70, 105, null);
+            g.drawImage(pressed, 165, 445, 70, 105, null);
+            g.drawImage(pressed, 235, 445, 70, 105, null);
+            g.drawImage(pressed, 305, 445, 70, 105, null);
 
             //PLAYER 4
-            g.drawImage(pressed, 48, 625, 70, 105, null);
-            g.drawImage(pressed, 118, 625, 70, 105, null);
-            g.drawImage(pressed, 188, 625, 70, 105, null);
-            g.drawImage(pressed, 258, 625, 70, 105, null);
-            g.drawImage(pressed, 328, 625, 70, 105, null);
+            g.drawImage(pressed, 25, 625, 70, 105, null);
+            g.drawImage(pressed, 95, 625, 70, 105, null);
+            g.drawImage(pressed, 165, 625, 70, 105, null);
+            g.drawImage(pressed, 235, 625, 70, 105, null);
+            g.drawImage(pressed, 305, 625, 70, 105, null);
         }
 
 
@@ -443,6 +443,7 @@ public class IslandPanel extends JPanel {
 
     public void updateBoard(ArrayList<IslandTile> arr) {
         for(IslandTile i : arr) {
+
 
         }
     }
