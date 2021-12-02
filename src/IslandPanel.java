@@ -317,18 +317,18 @@ public class IslandPanel extends JPanel {
             g.drawString("Player 2 " + (p2Role = p2.getRole()), 50, 260);
 
             //PLAYER 1
-            g.drawImage(pressed, 48, 85, 70, 105, null);
-            g.drawImage(pressed, 118, 85, 70, 105, null);
-            g.drawImage(pressed, 188, 85, 70, 105, null);
-            g.drawImage(pressed, 258, 85, 70, 105, null);
-            g.drawImage(pressed, 328, 85, 70, 105, null);
+            g.drawImage(pressed, 25, 85, 70, 105, null);
+            g.drawImage(pressed, 95, 85, 70, 105, null);
+            g.drawImage(pressed, 165, 85, 70, 105, null);
+            g.drawImage(pressed, 235, 85, 70, 105, null);
+            g.drawImage(pressed, 305, 85, 70, 105, null);
 
             //PLAYER 2
-            g.drawImage(pressed, 48, 265, 70, 105, null);
-            g.drawImage(pressed, 118, 265, 70, 105, null);
-            g.drawImage(pressed, 188, 265, 70, 105, null);
-            g.drawImage(pressed, 258, 265, 70, 105, null);
-            g.drawImage(pressed, 328, 265, 70, 105, null);
+            g.drawImage(pressed, 25, 265, 70, 105, null);
+            g.drawImage(pressed, 95, 265, 70, 105, null);
+            g.drawImage(pressed, 165, 265, 70, 105, null);
+            g.drawImage(pressed, 235, 265, 70, 105, null);
+            g.drawImage(pressed, 305, 265, 70, 105, null);
         }
         else if(FirstInputs.numberOfPlayers == 3) {
             g.drawString("Player 1 " + p1.getRole(), 50, 80);
@@ -336,25 +336,25 @@ public class IslandPanel extends JPanel {
             g.drawString("Player 3 " + p3.getRole(), 50, 440);
 
             //PLAYER 1
-            g.drawImage(pressed, 48, 85, 70, 105, null);
-            g.drawImage(pressed, 118, 85, 70, 105, null);
-            g.drawImage(pressed, 188, 85, 70, 105, null);
-            g.drawImage(pressed, 258, 85, 70, 105, null);
-            g.drawImage(pressed, 328, 85, 70, 105, null);
+            g.drawImage(pressed, 25, 85, 70, 105, null);
+            g.drawImage(pressed, 95, 85, 70, 105, null);
+            g.drawImage(pressed, 165, 85, 70, 105, null);
+            g.drawImage(pressed, 235, 85, 70, 105, null);
+            g.drawImage(pressed, 305, 85, 70, 105, null);
 
             //PLAYER 2
-            g.drawImage(pressed, 48, 265, 70, 105, null);
-            g.drawImage(pressed, 118, 265, 70, 105, null);
-            g.drawImage(pressed, 188, 265, 70, 105, null);
-            g.drawImage(pressed, 258, 265, 70, 105, null);
-            g.drawImage(pressed, 328, 265, 70, 105, null);
+            g.drawImage(pressed, 25, 265, 70, 105, null);
+            g.drawImage(pressed, 95, 265, 70, 105, null);
+            g.drawImage(pressed, 165, 265, 70, 105, null);
+            g.drawImage(pressed, 235, 265, 70, 105, null);
+            g.drawImage(pressed, 305, 265, 70, 105, null);
 
             //PLAYER 3
-            g.drawImage(pressed, 48, 445, 70, 105, null);
-            g.drawImage(pressed, 118, 445, 70, 105, null);
-            g.drawImage(pressed, 188, 445, 70, 105, null);
-            g.drawImage(pressed, 258, 445, 70, 105, null);
-            g.drawImage(pressed, 328, 445, 70, 105, null);
+            g.drawImage(pressed, 25, 445, 70, 105, null);
+            g.drawImage(pressed, 95, 445, 70, 105, null);
+            g.drawImage(pressed, 165, 445, 70, 105, null);
+            g.drawImage(pressed, 235, 445, 70, 105, null);
+            g.drawImage(pressed, 305, 445, 70, 105, null);
 
         }
         else {
