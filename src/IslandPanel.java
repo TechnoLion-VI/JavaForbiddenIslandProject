@@ -10,7 +10,7 @@ import java.util.Objects;
 public class IslandPanel extends JPanel {
     private BufferedImage one, two, three, four, fifth, sixth, seventh, eighth, ninth, tenth, eleventh, twelvth, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty, twentyone, twentytwo, twentythree, twentyfour;
     private ArrayList<BufferedImage> Islands = new <BufferedImage>ArrayList();
-    private BufferedImage Lion, goblet, crystal, fire, water, red, pressed, waterTile;
+    private BufferedImage Lion, goblet, crystal, fire, water, red, pressed, waterTile, treasureCrystalIcon, treasure,CrystalCapturedIcon, treasurStoneIcon, treasureStoneCapturedIcon, treasureChaliceIcon, treasureChaliceCapturedIcon, treasureStatueIcon, treasureStatueCapturedIcon;
     Player p1,p2,p3,p4;
     String p1Role;
     String p2Role;
@@ -404,6 +404,8 @@ public class IslandPanel extends JPanel {
             g.drawImage(pressed, 165, 625, 70, 105, null);
             g.drawImage(pressed, 235, 625, 70, 105, null);
             g.drawImage(pressed, 305, 625, 70, 105, null);
+
+            g.drawImage(treasureChaliceIcon,250,10,100,100,null);
         }
 
 
