@@ -10,7 +10,7 @@ import java.util.Objects;
 public class IslandPanel extends JPanel {
     private BufferedImage one, two, three, four, fifth, sixth, seventh, eighth, ninth, tenth, eleventh, twelvth, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty, twentyone, twentytwo, twentythree, twentyfour;
     private ArrayList<BufferedImage> Islands = new <BufferedImage>ArrayList();
-    private BufferedImage Lion, goblet, crystal, fire, water, red, pressed;
+    private BufferedImage Lion, goblet, crystal, fire, water, red, pressed, waterTile;
     Player p1,p2,p3,p4;
     String p1Role;
     String p2Role;
@@ -84,7 +84,7 @@ public class IslandPanel extends JPanel {
             twentytwo = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Twilight Hollow@2x.png")));
             twentythree = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Watchtower@2x.png")));
             twentyfour = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Whispering Garden@2x.png")));
-
+            waterTile = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Images/Tile_Flood_Water@2x.png")));
 
         } catch (Exception e) {
             System.out.println("Exception error");
@@ -200,10 +200,7 @@ public class IslandPanel extends JPanel {
         g.drawImage(water, 1350, 30, 150, 450, null);
 
         //treasures
-        g.drawImage(goblet, 1230, 150, 90, 90, null);
-        g.drawImage(crystal, 1230, 600, 90, 90, null);
-        g.drawImage(fire, 690, 600, 90, 90, null);
-        g.drawImage(Lion, 690, 150, 90, 90, null);
+
 
 
         //g.drawPolygon(new int[] {100, 100, 200}, new int[] {100, 300, 200}, 3);
@@ -231,6 +228,24 @@ public class IslandPanel extends JPanel {
             g.setColor(Color.RED);
             g.fillPolygon(new int[]{1330, 1330, 1365}, new int[]{262, 312, 287}, 3);
         }
+
+        g.drawImage(waterTile,x-200,100,100,100,null);
+        g.drawImage(waterTile,x-100,100,100,100,null);
+        g.drawImage(waterTile,x-200,200,100,100,null);
+        g.drawImage(waterTile,x-200,500,100,100,null);
+        g.drawImage(waterTile,x-200,600,100,100,null);
+        g.drawImage(waterTile,x-100,600,100,100,null);
+        g.drawImage(waterTile,x+200,100,100,100,null);
+        g.drawImage(waterTile,x+300,100,100,100,null);
+        g.drawImage(waterTile,x+300,200,100,100,null);
+        g.drawImage(waterTile,x+300,500,100,100,null);
+        g.drawImage(waterTile,x+300,600,100,100,null);
+        g.drawImage(waterTile,x+200,600,100,100,null);
+
+        g.drawImage(goblet, 1195, 100, 90, 90, null);
+        g.drawImage(crystal, 1190, 600, 90, 90, null);
+        g.drawImage(fire, 690, 610, 90, 90, null);
+        g.drawImage(Lion, 690, 110, 90, 90, null);
 
 
         for (int i = 0; i < 2; i++) {
