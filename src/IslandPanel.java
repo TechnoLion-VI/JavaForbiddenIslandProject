@@ -10,6 +10,7 @@ import java.util.Objects;
 public class IslandPanel extends JPanel {
     private BufferedImage one, two, three, four, fifth, sixth, seventh, eighth, ninth, tenth, eleventh, twelvth, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty, twentyone, twentytwo, twentythree, twentyfour;
     private ArrayList<BufferedImage> Islands = new <BufferedImage>ArrayList();
+    private ArrayList<IslandTile> board;
     private BufferedImage Lion, goblet, crystal, fire, water, red, pressed, waterTile, treasureCrystalIcon, treasure,CrystalCapturedIcon, treasurStoneIcon, treasureStoneCapturedIcon, treasureChaliceIcon, treasureChaliceCapturedIcon, treasureStatueIcon, treasureStatueCapturedIcon;
     Player p1,p2,p3,p4;
     String p1Role;
@@ -47,7 +48,71 @@ public class IslandPanel extends JPanel {
     }
 
 
-    public IslandPanel() {
+
+    public void scrambleBoard() {
+        int temp = 0;
+        for(int x = 1; x<=4; x++) {
+            for(int y = 1; y<=4; y++) {
+                board.get(temp).setX(x);
+                board.get(temp).setY(y);
+                temp++;
+            }
+
+        }
+        board.get(temp).setX(2);
+        board.get(temp).setY(0);
+        temp++;
+        board.get(temp).setX(3);
+        board.get(temp).setY(0);
+        temp++;
+        board.get(temp).setX(0);
+        board.get(temp).setY(2);
+        temp++;
+        board.get(temp).setX(0);
+        board.get(temp).setY(3);
+        temp++;
+        board.get(temp).setX(5);
+        board.get(temp).setY(2);
+        temp++;
+        board.get(temp).setX(5);
+        board.get(temp).setY(3);
+        temp++;
+        board.get(temp).setX(2);
+        board.get(temp).setY(5);
+        temp++;
+        board.get(temp).setX(3);
+        board.get(temp).setY(5);
+        temp++;
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public IslandPanel(ArrayList<IslandTile> board) {
+        this.board = board;
+        scrambleBoard();
+
+
+
+
+
+
+
         GameState gameState = new GameState(4);
 
         try {
@@ -248,6 +313,12 @@ public class IslandPanel extends JPanel {
         g.drawImage(Lion, 690, 110, 90, 90, null);
 
 
+        for(IslandTile is : board) {
+            g.drawImage(is.getImage(), x+is.getX()*100-200, y+is.getY()*100, 100, 100, null);
+        }
+
+
+/*
         for (int i = 0; i < 2; i++) {
             int j;
             g.drawImage(Islands.get(j = (int) (Math.random() * Islands.size())), x, y, 100, 100, null);
@@ -320,6 +391,8 @@ public class IslandPanel extends JPanel {
             y3 = y3 + 100;
             Collections.shuffle(Islands);
         }
+
+        */
         g.setColor(Color.WHITE);
         g.setFont(new Font(Font.SERIF, Font.BOLD, 15));
 
