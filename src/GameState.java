@@ -21,7 +21,7 @@ public class GameState {
             allPlayers[i] = new Player(playerRoles.pop());
         }
 
-        this.numPlayers = numPlayers;
+        GameState.numPlayers = numPlayers;
 
     }
 }
