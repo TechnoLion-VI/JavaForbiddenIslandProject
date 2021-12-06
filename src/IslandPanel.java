@@ -10,138 +10,13 @@ import java.util.Objects;
 public class IslandPanel extends JPanel {
     private BufferedImage one, two, three, four, fifth, sixth, seventh, eighth, ninth, tenth, eleventh, twelvth, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty, twentyone, twentytwo, twentythree, twentyfour;
     private ArrayList<BufferedImage> Islands = new <BufferedImage>ArrayList();
-    private ArrayList<IslandTile> board = new <IslandTile>ArrayList();
-    private BufferedImage Lion, goblet, crystal, fire, water, red, pressed;
+    private ArrayList<IslandTile> board;
+    private BufferedImage Lion, goblet, crystal, fire, water, red, pressed, waterTile, treasureCrystalIcon, treasure,CrystalCapturedIcon, treasurStoneIcon, treasureStoneCapturedIcon, treasureChaliceIcon, treasureChaliceCapturedIcon, treasureStatueIcon, treasureStatueCapturedIcon;
     Player p1,p2,p3,p4;
     String p1Role;
     String p2Role;
     String p3Role;
     String p4Role;
-
-
-    public IslandPanel(ArrayList<IslandTile> arr) {
-        GameState gameState = new GameState(4);
-
-        try {
-            Lion = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/lion.png")));
-            goblet = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/GobletOfWater.png")));
-            crystal = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/CrystalStone.png")));
-            fire = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Fire.png")));
-            water = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/WaterLevel.JPG")));
-            red = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/TickMark.jpg")));
-            pressed = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Card_Pressed@2x.png")));
-
-
-            one = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Breakers Bridge@2x.png")));
-            two = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Bronze Gate@2x.png")));
-            three = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Cave of Embers@2x.png")));
-            four = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Cave of Shadows@2x.png")));
-            fifth = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Cliffs of Abandon@2x.png")));
-            sixth = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Copper Gate@2x.png")));
-            seventh = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Coral Palace@2x.png")));
-            eighth = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Crimson Forest@2x.png")));
-            ninth = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Dunes of Deception@2x.png")));
-            tenth = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Fools_ Landing@2x.png")));
-            eleventh = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Gold Gate@2x.png")));
-            twelvth = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Howling Garden@2x.png")));
-            thirteen = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Iron Gate@2x.png")));
-            fourteen = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Lost Lagoon@2x.png")));
-            fifteen = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Misty Marsh@2x.png")));
-            sixteen = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Observatory@2x.png")));
-            seventeen = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Phantom Rock@2x.png")));
-            eighteen = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Silver Gate@2x.png")));
-            nineteen = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Temple of the Moon@2x.png")));
-            twenty = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Temple of the Sun@2x.png")));
-            twentyone = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Tidal Palace@2x.png")));
-            twentytwo = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Twilight Hollow@2x.png")));
-            twentythree = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Watchtower@2x.png")));
-            twentyfour = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Whispering Garden@2x.png")));
-
-
-        } catch (Exception e) {
-            System.out.println("Exception error");
-        }
-        setLayout(null);
-
-        JPanel panel1 = new JPanel();
-        panel1.setBounds(450, 20, 90, 35);
-        add(panel1);
-        JButton shoreButton = new JButton("Shore Up");
-        shoreButton.setSize(80, 25);
-        shoreButton.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
-        panel1.add(shoreButton);
-        validate();
-
-        JPanel panel2 = new JPanel();
-        panel2.setBounds(550, 20, 100, 35);
-        add(panel2);
-        JButton treasureButton = new JButton("Get Treasure");
-        treasureButton.setSize(80, 25);
-        treasureButton.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
-        panel2.add(treasureButton);
-        validate();
-
-        JPanel panel3 = new JPanel();
-        panel3.setBounds(660, 20, 85, 35);
-        add(panel3);
-        JButton captureButton = new JButton("Capture");
-        captureButton.setSize(80, 25);
-        captureButton.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
-        panel3.add(captureButton);
-        validate();
-
-        JPanel panel4 = new JPanel();
-        panel4.setBounds(755, 20, 90, 35);
-        add(panel4);
-        JButton giveButton = new JButton("Give Card");
-        giveButton.setSize(80, 25);
-        giveButton.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
-        panel4.add(giveButton);
-        validate();
-
-        JPanel panel5 = new JPanel();
-        panel5.setBounds(855, 20, 100, 35);
-        add(panel5);
-        JButton sandbagButton = new JButton("Use Sandbag");
-        sandbagButton.setSize(80, 25);
-        sandbagButton.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
-        panel5.add(sandbagButton);
-        validate();
-
-        JPanel panel6 = new JPanel();
-        panel6.setBounds(965, 20, 105, 35);
-        add(panel6);
-        JButton helicopterButton = new JButton("Use Helicopter");
-        helicopterButton.setSize(80, 25);
-        helicopterButton.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
-        panel6.add(helicopterButton);
-        validate();
-
-        try{p1 = GameState.allPlayers[0];} catch (ArrayIndexOutOfBoundsException ignored){}
-        try{p2 = GameState.allPlayers[1];} catch (ArrayIndexOutOfBoundsException ignored){}
-        try{p3 = GameState.allPlayers[2];} catch (ArrayIndexOutOfBoundsException ignored){}
-        try{p4 = GameState.allPlayers[3];} catch (ArrayIndexOutOfBoundsException ignored){}
-
-
-
-
-
-        board = arr;
-        int curr = 0;
-        for(int x = 1; x<=4; x++) {
-            for(int y = 1; y<=4;y++) {
-                arr.get(0).setX(x);
-                arr.get(0).setY(y);
-            }
-        }
-        repaint();
-    }
-
-
-
-
-
-
 
     public BufferedImage getImage(int i) {
         ArrayList<BufferedImage> arr = new <BufferedImage>ArrayList();
@@ -173,7 +48,71 @@ public class IslandPanel extends JPanel {
     }
 
 
-    public IslandPanel() {
+
+    public void scrambleBoard() {
+        int temp = 0;
+        for(int x = 1; x<=4; x++) {
+            for(int y = 1; y<=4; y++) {
+                board.get(temp).setX(x);
+                board.get(temp).setY(y);
+                temp++;
+            }
+
+        }
+        board.get(temp).setX(2);
+        board.get(temp).setY(0);
+        temp++;
+        board.get(temp).setX(3);
+        board.get(temp).setY(0);
+        temp++;
+        board.get(temp).setX(0);
+        board.get(temp).setY(2);
+        temp++;
+        board.get(temp).setX(0);
+        board.get(temp).setY(3);
+        temp++;
+        board.get(temp).setX(5);
+        board.get(temp).setY(2);
+        temp++;
+        board.get(temp).setX(5);
+        board.get(temp).setY(3);
+        temp++;
+        board.get(temp).setX(2);
+        board.get(temp).setY(5);
+        temp++;
+        board.get(temp).setX(3);
+        board.get(temp).setY(5);
+        temp++;
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public IslandPanel(ArrayList<IslandTile> board) {
+        this.board = board;
+        scrambleBoard();
+
+
+
+
+
+
+
         GameState gameState = new GameState(4);
 
         try {
@@ -210,7 +149,7 @@ public class IslandPanel extends JPanel {
             twentytwo = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Twilight Hollow@2x.png")));
             twentythree = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Watchtower@2x.png")));
             twentyfour = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Cards/Flood_Card_Whispering Garden@2x.png")));
-
+            waterTile = ImageIO.read(Objects.requireNonNull(IslandPanel.class.getResource("Images/Tile_Flood_Water@2x.png")));
 
         } catch (Exception e) {
             System.out.println("Exception error");
@@ -326,10 +265,7 @@ public class IslandPanel extends JPanel {
         g.drawImage(water, 1350, 30, 150, 450, null);
 
         //treasures
-        g.drawImage(goblet, 1230, 150, 90, 90, null);
-        g.drawImage(crystal, 1230, 600, 90, 90, null);
-        g.drawImage(fire, 690, 600, 90, 90, null);
-        g.drawImage(Lion, 690, 150, 90, 90, null);
+
 
 
         //g.drawPolygon(new int[] {100, 100, 200}, new int[] {100, 300, 200}, 3);
@@ -358,7 +294,31 @@ public class IslandPanel extends JPanel {
             g.fillPolygon(new int[]{1330, 1330, 1365}, new int[]{262, 312, 287}, 3);
         }
 
+        g.drawImage(waterTile,x-200,100,100,100,null);
+        g.drawImage(waterTile,x-100,100,100,100,null);
+        g.drawImage(waterTile,x-200,200,100,100,null);
+        g.drawImage(waterTile,x-200,500,100,100,null);
+        g.drawImage(waterTile,x-200,600,100,100,null);
+        g.drawImage(waterTile,x-100,600,100,100,null);
+        g.drawImage(waterTile,x+200,100,100,100,null);
+        g.drawImage(waterTile,x+300,100,100,100,null);
+        g.drawImage(waterTile,x+300,200,100,100,null);
+        g.drawImage(waterTile,x+300,500,100,100,null);
+        g.drawImage(waterTile,x+300,600,100,100,null);
+        g.drawImage(waterTile,x+200,600,100,100,null);
 
+        g.drawImage(goblet, 1195, 100, 90, 90, null);
+        g.drawImage(crystal, 1190, 600, 90, 90, null);
+        g.drawImage(fire, 690, 610, 90, 90, null);
+        g.drawImage(Lion, 690, 110, 90, 90, null);
+
+
+        for(IslandTile is : board) {
+            g.drawImage(is.getImage(), x+is.getX()*100-200, y+is.getY()*100, 100, 100, null);
+        }
+
+
+/*
         for (int i = 0; i < 2; i++) {
             int j;
             g.drawImage(Islands.get(j = (int) (Math.random() * Islands.size())), x, y, 100, 100, null);
@@ -431,6 +391,8 @@ public class IslandPanel extends JPanel {
             y3 = y3 + 100;
             Collections.shuffle(Islands);
         }
+
+        */
         g.setColor(Color.WHITE);
         g.setFont(new Font(Font.SERIF, Font.BOLD, 15));
 
@@ -515,6 +477,8 @@ public class IslandPanel extends JPanel {
             g.drawImage(pressed, 165, 625, 70, 105, null);
             g.drawImage(pressed, 235, 625, 70, 105, null);
             g.drawImage(pressed, 305, 625, 70, 105, null);
+
+            g.drawImage(treasureChaliceIcon,250,10,100,100,null);
         }
 
 
